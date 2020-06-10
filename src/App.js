@@ -1,8 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Header from './header.js';
+import Main from './main.js';
+import Sidebar from './sidebar.js';
 
-function App() {
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +23,23 @@ function App() {
       </header>
     </div>
   );
+}*/
+
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Header/>
+        <div className="Section">
+          <Sidebar className="Left-Half"/>
+        </div>
+        <div className="Section">
+          <Main className="Right-Half"/>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

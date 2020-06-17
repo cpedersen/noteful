@@ -1,32 +1,27 @@
-/*.Sidebar {
-    border: 1px solid black;
-    margin: 0 auto;
-    background-color: white;
-    position: relative;
-    top: 0%;
-    left: 0%;
-    padding: 1rem;
-    text-align: center;
-}*/
-
-/*.Sidebar {
-    border: 1px solid black;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    padding: 1rem;
-    text-align: center;
-    transform: translate(-50%, -50%);
-}*/
-
-/*.Sidebar {
-    background-color: #b6701e;
-    float: left;
-    width: 50%;   
-}*/
+/*border: 1px solid black;*/
 
 .Sidebar {
-    background-color: #ff9e2c;
+    background-color: #8B7B8B;;
+    color: white;
     float: left;
-    width: 50%;
+    width: 30%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column; 
+    align-content: space-around;
+}
+
+.Folder {
+    background-color: #2E0854; 
+    padding: 15px;
+    margin: 6px;
+}
+
+.Folder_Link {
+    text-decoration: none; 
+    color: white;
+}
+
+.AddFolder_Section {
+    background-color: #8B7B8B;;
 }

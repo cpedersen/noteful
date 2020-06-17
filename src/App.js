@@ -3,39 +3,31 @@ import './App.css';
 import Header from './header.js';
 import Main from './main.js';
 import Sidebar from './sidebar.js';
-
-/*function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}*/
-
+import Store from './dummy-store.js';
 
 class App extends Component {
+  state = {
+    folders: [],
+    notes: []
+  };
+
+  componentDidMount() {
+    this.setState({folders: Store.folders, notes: Store.notes})
+  }
+
   render() {
     return (
       <div className="App">
         <Header/>
         <div className="Section">
-          <Sidebar className="Left-Half"/>
+          <Sidebar className="Left-Half"
+            folders={this.state.folders}
+          />
         </div>
         <div className="Section">
-          <Main className="Right-Half"/>
+          <Main className="Right-Half"
+            notes={this.state.notes}
+          />
         </div>
       </div>
     );

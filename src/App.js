@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
-import './App.css';
-import Header from './header.js';
-import Main from './main.js';
-import Sidebar from './sidebar.js';
-import Store from './dummy-store.js';
+import React, { Component } from 'react'
+import { Route, Switch } from 'react-router-dom'
+import Header from './header.js'
+import Main from './main.js'
+import MainDetail from './mainDetail.js'
+import Sidebar from './sidebar.js'
+import SidebarDetail from './sidebarDetail.js'
+import Store from './dummy-store.js'
+import './App.css'
 
 class App extends Component {
   state = {
@@ -15,19 +18,75 @@ class App extends Component {
     this.setState({folders: Store.folders, notes: Store.notes})
   }
 
+
   render() {
     return (
       <div className="App">
         <Header/>
         <div className="Section">
-          <Sidebar className="Left-Half"
-            folders={this.state.folders}
-          />
+
+            <Switch>
+              <Route 
+                exact path="/" 
+                render={(routerProps) =>
+                  <Sidebar
+                    folders={this.state.folders}
+                  />
+                }
+              />
+              <Route 
+                path="/folder/:folder_id" 
+                render={(routerProps) =>
+                  <Sidebar
+                    folders={this.state.folders}
+                    selectedFolder={this.state.folders.find(folder_id => folder_id.id === routerProps.match.params.folder_id)}
+                  />
+                }
+              />
+              <Route 
+                path="/note/:note_id" 
+                render={(routerProps) =>
+                  <SidebarDetail
+                    folders={
+                      //search array of notes using note_id to get folderId
+                      //search array of folders, looking for a match for folderId
+                      //using folderId, get folder.name
+                    }
+                  />
+                }
+              />
+            </Switch>
+
         </div>
         <div className="Section">
-          <Main className="Right-Half"
-            notes={this.state.notes}
-          />
+
+            <Switch>
+              <Route 
+                exact path="/" 
+                render={(routerProps) =>
+                  <Main
+                    notes={this.state.notes}
+                  />
+                }
+                />
+              <Route 
+                path="/folder/:folder_id" 
+                render={(routerProps) =>
+                  <Main
+                    notes={this.state.notes.filter(note => note.folderId === routerProps.match.params.folder_id)}
+                  />
+                }
+              />
+              <Route 
+                path="/note/:note_id" 
+                render={(routerProps) =>
+                  <MainDetail
+                    note={this.state.notes.find(note => note.id === routerProps.match.params.note_id)}
+                  />
+                }
+              />
+            </Switch>
+
         </div>
       </div>
     );
@@ -35,3 +94,5 @@ class App extends Component {
 }
 
 export default App;
+
+

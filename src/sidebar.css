@@ -25,3 +25,9 @@
 .AddFolder_Section {
     background-color: #8B7B8B;;
 }
+
+.SelectedFolder {
+    background-color: #B452CD;
+    padding: 15px;
+    margin: 6px;
+}

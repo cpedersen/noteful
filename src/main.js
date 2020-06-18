@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import './main.css';
 
 class Main extends Component {
@@ -11,9 +12,13 @@ class Main extends Component {
                 {this.props.notes.map(note => {
                     return(
                         <div className="Note">
+
+
                             <div className="Note_Section1">
                                 <h3 className="Note_Name"><Link className="Note_Link" to={'/note/' + note.id}>{note.name}</Link></h3>
                             </div>
+
+
                             <div className="Note_Section2">
                                 <div className="Note_Section2_Date">
                                     Modified {note.modified}
@@ -22,6 +27,7 @@ class Main extends Component {
                                     <button className="Delete_Note_Button">Delete Note</button>
                                 </div>
                             </div>
+
                         </div>
                     )
                 })}

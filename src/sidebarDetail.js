@@ -6,9 +6,13 @@ import './sidebarDetail.css';
 class SidebarDetail extends Component {
     render() {
         return (
-            <div className="SidebarDetail">
-                This is the Sidebar Detail.
-            </div>
+            this.props.folders.map(folder => {
+                if (folder.id === this.props.note.folderId) {
+                    return(<div>
+                        {folder.name}
+                    </div>)
+                }
+            })
         );
     }
 }

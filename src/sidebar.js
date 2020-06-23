@@ -17,7 +17,8 @@ class Sidebar extends Component {
                                 to={'/folder/' + folder.id}>
                                 {folder.name}
                             </Link>
-                        </div>)
+                        </div>
+                    )
                 })}
                 <div className="AddFolder_Section">
                     <button className="AddFolder">Add Folder</button>

@@ -18,13 +18,11 @@ class App extends Component {
     this.setState({folders: Store.folders, notes: Store.notes})
   }
 
-
   render() {
     return (
       <div className="App">
         <Header/>
         <div className="Section">
-
             <Switch>
               <Route 
                 exact path="/" 
@@ -39,7 +37,7 @@ class App extends Component {
                 render={(routerProps) =>
                   <Sidebar
                     folders={this.state.folders}
-                    selectedFolder={this.state.folders.find(folder_id => folder_id.id === routerProps.match.params.folder_id)}
+                    selectedFolder={this.state.folders.find(folder => folder.id === routerProps.match.params.folder_id)}
                   />
                 }
               />
@@ -47,19 +45,16 @@ class App extends Component {
                 path="/note/:note_id" 
                 render={(routerProps) =>
                   <SidebarDetail
-                    folders={
-                      //search array of notes using note_id to get folderId
-                      //search array of folders, looking for a match for folderId
-                      //using folderId, get folder.name
-                    }
+                    //Provide info for displaying the folder name
+                    folders={this.state.folders}
+                    note={this.state.notes.find(note => note.id === routerProps.match.params.note_id)}
                   />
                 }
               />
             </Switch>
-
+            
         </div>
         <div className="Section">
-
             <Switch>
               <Route 
                 exact path="/" 
@@ -90,6 +85,7 @@ class App extends Component {
         </div>
       </div>
     );
+    
   }
 }
 

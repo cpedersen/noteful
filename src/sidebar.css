@@ -1,11 +1,14 @@
 /*border: 1px solid black;*/
 
 .Sidebar {
-    background-color: #8B7B8B;;
+    background-color: linear-gradient(
+        to right,
+        #8B7B8B 0%,
+        #8B7B8B 100%,
+    );
     color: white;
     float: left;
     width: 30%;
-    margin-top: 15px;
     display: flex;
     flex-direction: column; 
     align-content: space-around;
@@ -13,8 +16,9 @@
 
 .Folder {
     background-color: #2E0854; 
-    padding: 15px;
-    margin: 6px;
+    padding: 15px 15px 15px 15px;
+    margin: 0px 6px 12px 6px;
+    text-align: center;
 }
 
 .Folder_Link {
@@ -28,6 +32,6 @@
 
 .SelectedFolder {
     background-color: #B452CD;
-    padding: 15px;
-    margin: 6px;
+    padding: 15px 15px 15px 15px;
+    margin: 0px 6px 12px 6px;
 }

@@ -8,7 +8,8 @@ class SidebarDetail extends Component {
         return (
             this.props.folders.map(folder => {
                 if (folder.id === this.props.note.folderId) {
-                    return(<div>
+                    return(
+                    <div className="SidebarDetail">
                         {folder.name}
                     </div>)
                 }

@@ -45,7 +45,8 @@ class App extends Component {
                 path="/note/:note_id" 
                 render={(routerProps) =>
                   <SidebarDetail
-                    //Provide info for displaying the folder name
+                    //Provide info for displaying the folder name in the Sidebar &
+                    //note content in the Main section.
                     folders={this.state.folders}
                     note={this.state.notes.find(note => note.id === routerProps.match.params.note_id)}
                   />

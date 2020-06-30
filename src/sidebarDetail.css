@@ -1,13 +1,11 @@
-/*.SidebarDetail {
-    border: 1px solid black;
-    display: inline-block;
-    vertical-align: top;
-    width: 25%;
-    padding: 1rem;
-    text-align: center;
-}*/
-
+/* border: 1px solid black; */
 .SidebarDetail {
+    padding: 0px;
+    margin: 0px;
+    background-color: #8B7B8B;
+}
+
+.FolderName {
     background-color: #2E0854; 
     color: white;
     float: left;
@@ -22,4 +20,24 @@
     writing-mode: vertical-rl;
     text-orientation: upright;
     text-align: center;
+    flex-wrap: nowrap;
 }
+
+.Section_BackButton {
+    background-color: #8B7B8B;
+    color: black;
+    height: 40px;
+    width: 75px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.BackButton {
+    background-color: lightgray;   
+    height: 40px;
+    width: 75px;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: inherit;
+}
+

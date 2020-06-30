@@ -1,11 +1,5 @@
-/*border: 1px solid black;*/
-
 .Sidebar {
-    background-color: linear-gradient(
-        to right,
-        #8B7B8B 0%,
-        #8B7B8B 100%,
-    );
+    background-color:  #8B7B8B;
     color: white;
     float: left;
     width: 30%;

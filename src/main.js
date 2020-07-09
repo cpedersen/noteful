@@ -3,13 +3,11 @@ import { Link, withRouter } from 'react-router-dom'
 import { format, parseISO } from 'date-fns'
 import NotesContext from './notesContext'
 import './main.css';
-//import { queryHelpers } from '@testing-library/react'
 import './notes-helpers.js'
 
 class Main extends Component {
     static contextType = NotesContext
     render() {
-        //console.log("Made it to Main: " + JSON.stringify(this.props))
         let notesContext = this.context
         console.log("main notes: " + JSON.stringify(notesContext.notes))
         let notes
@@ -18,15 +16,11 @@ class Main extends Component {
         } else {
             notes = notesContext.notes
         }
-        //QUESTIONS - Not sure why I need to do the selectedFolder check. And do I only need to do this check in Main?
-        // How fix no display of all folders by default?
-        const selectedFolder = this.props.match.params.folder_id || {}
-        //console.log("main selectedFolder: " + JSON.stringify(selectedFolder))
         return (
             <div className="Main">
                 {notes.map(note => {
                     return(
-                        <div className="Note">
+                        <section className="Note">
                             <div className="Note_Section1">
                                 <h3 className="Note_Name"><Link className="Note_Link" to={'/note/' + note.id}>{note.name}</Link></h3>
                             </div>
@@ -40,7 +34,7 @@ class Main extends Component {
                                         className="Delete_Note_Button">Delete Note</button>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                     )
                 })}
                 <div className="Add_Note_Button_Section">

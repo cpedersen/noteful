@@ -5,12 +5,18 @@ import './mainDetail.css';
 
 class MainDetail extends Component {
     static contextType = NotesContext;
+
+    //YOUAREHERE
+    //handleDeleteNote = noteId => {
+    //    this.props.history.push(`/`)
+    //}
+
     render() {
         let notesContext = this.context
         let note = notesContext.notes.filter(note => note.id === this.props.match.params.note_id)
         console.log("MainDetail note: " + JSON.stringify(note))
         return (
-            <div className="MainDetail">
+            <section className="MainDetail">
                 <div className="MainDetail_Header">
                     <div className="Header_Section1">
                         <div className="NoteTitle">{note[0].name}</div>
@@ -34,7 +40,7 @@ class MainDetail extends Component {
                     {note[0].content}
                     </p>
                 </div>
-            </div>
+            </section>
         );
     }
 }

@@ -1,19 +1,9 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
-//import { Route, Switch } from 'react-router-dom'
 import NotesContext from './notesContext'
-import { findNote, findFolder } from './notes-helpers'
 import './sidebarDetail.css';
 
 class SidebarDetail extends Component {
-    /*static defaultProps = {
-        history: {
-            goBack: () => {}
-        },
-        match: {
-            params: {}
-        }
-    }*/
     static contextType = NotesContext;
     render() {
         let notesContext = this.context

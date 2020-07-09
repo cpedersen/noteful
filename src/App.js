@@ -17,7 +17,6 @@ class App extends Component {
   };
 
   setData = (notes, folders) => {
-    //console.log("Inside setData: " + notes)
     this.setState({
       notes,
       folders,
@@ -56,7 +55,6 @@ class App extends Component {
       }));
     })
     .then(results => {
-      //console.log("fetch results are " + results);
       this.setData(results[0], results[1])
     })
     .catch(error => this.setState({ error }))

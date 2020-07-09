@@ -6,11 +6,6 @@ import './mainDetail.css';
 class MainDetail extends Component {
     static contextType = NotesContext;
 
-    //YOUAREHERE
-    //handleDeleteNote = noteId => {
-    //    this.props.history.push(`/`)
-    //}
-
     render() {
         let notesContext = this.context
         let note = notesContext.notes.filter(note => note.id === this.props.match.params.note_id)

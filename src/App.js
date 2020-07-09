@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
+//import { Route, Switch, withRouter } from 'react-router-dom'
 import Header from './header.js'
 import Main from './main.js'
 import MainDetail from './mainDetail.js'
 import Sidebar from './sidebar.js'
 import SidebarDetail from './sidebarDetail.js'
-import Store from './dummy-store.js'
+//import Store from './dummy-store.js'
 import NotesContext from './notesContext'
 import './App.css'
 import config from './config'
@@ -26,15 +27,27 @@ class App extends Component {
     })
   }
 
-  deleteNote = note => {
+  //For delete, make another fetch call 
+  /*deleteNote = note => {
     this.setState({
       notes: [ ... this.state.notes, note]
     })
+  }*/
+
+  deleteNote = note_id => {
+    fetch(config.API_ENDPOINT + "/notes/" + note_id, {
+      method: 'DELETE'
+    })
+      .then(response => response.json())
+      .then(result => {
+        this.setState(notes => {
+          const newNotes = this.state.notes.filter(note => note.id !== note_id);
+          return newNotes
+        })
+      })
   }
 
   componentDidMount() {
-    //this.setState({folders: Store.folders, notes: Store.notes})
-
     Promise.all([
       fetch(config.API_ENDPOINT + "/notes"),
       fetch(config.API_ENDPOINT + "/folders")
@@ -45,7 +58,7 @@ class App extends Component {
       }));
     })
     .then(results => {
-      console.log("fetch results are " + results);
+      //console.log("fetch results are " + results);
       this.setData(results[0], results[1])
     })
     .catch(error => this.setState({ error }))
@@ -55,8 +68,10 @@ class App extends Component {
     const contextValue = {
       notes: this.state.notes,
       folders: this.state.folders,
+      deleteNote: this.deleteNote
     }
 
+    console.log(this.state.notes)
     return (
       <NotesContext.Provider value={contextValue}>
         <div className="App">
@@ -65,31 +80,14 @@ class App extends Component {
               <Switch>
                 <Route 
                   exact path="/" 
-                  render={(routerProps) =>
-                    <Sidebar
-                      folders={this.state.folders}
-                    />
-                  }
-                  /*component={Sidebar}*/
+                  component={Sidebar}
                 />
                 <Route 
                   path="/folder/:folder_id" 
-                  /*render={(routerProps) =>
-                    <Sidebar
-                      folders={this.state.folders}
-                      selectedFolder={this.state.folders.find(folder => folder.id === routerProps.match.params.folder_id)}
-                    />
-                  }*/
                   component={Sidebar}
                 />
                 <Route 
                   path="/note/:note_id" 
-                  /*render={(routerProps) =>
-                    <SidebarDetail
-                      folders={this.state.folders}
-                      note={this.state.notes.find(note => note.id === routerProps.match.params.note_id)}
-                    />
-                  }*/
                   component={SidebarDetail}
                 />
               </Switch>
@@ -99,29 +97,15 @@ class App extends Component {
               <Switch>
                 <Route 
                   exact path="/" 
-                  render={(routerProps) =>
-                    <Main
-                      notes={this.state.notes}
-                    />
-                  }
+                  component={Main}
                   />
                 <Route 
                   path="/folder/:folder_id" 
-                  /*render={(routerProps) =>
-                    <Main
-                      notes={this.state.notes.filter(note => note.folderId === routerProps.match.params.folder_id)}
-                    />
-                  }*/
                   component={Main}
                 />
                 <Route 
                   path="/note/:note_id" 
-                  /*render={(routerProps) =>
-                    <MainDetail
-                      note={this.state.notes.find(note => note.id === routerProps.match.params.note_id)}
-                    />
-                  }*/
-                  component={Main}
+                  component={MainDetail}
                 />
               </Switch>
 
@@ -129,82 +113,11 @@ class App extends Component {
         </div>
       </NotesContext.Provider>
     );
-  } /* End return */
-
-
-  /*return (
-    <NotesContext.Provider value={contextValue}>
-      <div className="App">
-        <Header/>
-        <div className="Section">
-            <Switch>
-              <Route 
-                exact path="/" 
-                render={(routerProps) =>
-                  <Sidebar
-                    folders={this.state.folders}
-                  />
-                }
-              />
-              <Route 
-                path="/folder/:folder_id" 
-                render={(routerProps) =>
-                  <Sidebar
-                    folders={this.state.folders}
-                    selectedFolder={this.state.folders.find(folder => folder.id === routerProps.match.params.folder_id)}
-                  />
-                }
-              />
-              <Route 
-                path="/note/:note_id" 
-                render={(routerProps) =>
-                  <SidebarDetail
-                    //Provide info for displaying the folder name in the Sidebar &
-                    //note content in the Main section.
-                    folders={this.state.folders}
-                    note={this.state.notes.find(note => note.id === routerProps.match.params.note_id)}
-                  />
-                }
-              />
-            </Switch>
-            
-        </div>
-        <div className="Section">
-            <Switch>
-              <Route 
-                exact path="/" 
-                render={(routerProps) =>
-                  <Main
-                    notes={this.state.notes}
-                  />
-                }
-                />
-              <Route 
-                path="/folder/:folder_id" 
-                render={(routerProps) =>
-                  <Main
-                    notes={this.state.notes.filter(note => note.folderId === routerProps.match.params.folder_id)}
-                  />
-                }
-              />
-              <Route 
-                path="/note/:note_id" 
-                render={(routerProps) =>
-                  <MainDetail
-                    note={this.state.notes.find(note => note.id === routerProps.match.params.note_id)}
-                  />
-                }
-              />
-            </Switch>
-
-        </div>
-      </div>
-    </NotesContext.Provider>
-  );
-} */
-
+  } 
 }
 
 export default App;
+
+
 
 

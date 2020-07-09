@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { Route, Switch } from 'react-router-dom'
 import { format, parseISO } from 'date-fns'
+import NotesContext from './notesContext'
 import './mainDetail.css';
 
-//Modified {' '} {format(this.props.note.modified, 'MM/DD/YYYY')} 
-//Modified {' '} {this.props.note.modified}
-
 class MainDetail extends Component {
+    static contextType = NotesContext;
     render() {
+        let notesContext = this.context
+        let note = notesContext.notes.filter(note => note.id === this.props.match.params.note_id)
+        console.log("MainDetail note: " + JSON.stringify(note))
         return (
             <div className="MainDetail">
                 <div className="MainDetail_Header">
                     <div className="Header_Section1">
-                        <div className="NoteTitle">{this.props.note.name}</div>
+                        <div className="NoteTitle">{note[0].name}</div>
                         <div className="Date">
-                            Modified {' '} {format(parseISO(this.props.note.modified), 'MM/dd/yyyy')}
+                            Modified {' '} {format(parseISO(note[0].modified), 'MM/dd/yyyy')} 
                         </div>
                     </div>
                     <div className="Header_Section2">
@@ -28,13 +28,12 @@ class MainDetail extends Component {
                     </div>
                 </div>
             
-            
-            <div className="NoteBox">
-                <p className="NoteText">
-                {this.props.note.content}
-                </p>
+                <div className="NoteBox">
+                    <p className="NoteText">
+                    {note[0].content}
+                    </p>
+                </div>
             </div>
-        </div>
         );
     }
 }

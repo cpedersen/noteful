@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { format, parseISO } from 'date-fns'
 import NotesContext from './notesContext'
+import { withRouter } from 'react-router-dom'
 import './mainDetail.css';
 
 class MainDetail extends Component {
@@ -9,7 +10,7 @@ class MainDetail extends Component {
     render() {
         let notesContext = this.context
         let note = notesContext.notes.filter(note => note.id === this.props.match.params.note_id)
-        console.log("MainDetail note: " + JSON.stringify(note))
+        //console.log("MainDetail note: " + JSON.stringify(note))
         return (
             <section className="MainDetail">
                 <div className="MainDetail_Header">
@@ -40,4 +41,5 @@ class MainDetail extends Component {
     }
 }
 
-export default MainDetail;
+//export default MainDetail;
+export default withRouter(MainDetail);

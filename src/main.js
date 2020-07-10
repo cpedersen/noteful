@@ -9,7 +9,6 @@ class Main extends Component {
     static contextType = NotesContext
     render() {
         let notesContext = this.context
-        console.log("main notes: " + JSON.stringify(notesContext.notes))
         let notes
         if (this.props.match.params.folder_id) {
             notes = notesContext.notes.filter(note => note.folderId === this.props.match.params.folder_id)

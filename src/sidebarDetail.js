@@ -26,6 +26,11 @@ class SidebarDetail extends Component {
                             </div>
                         </div>
                     )
+                } else {
+                    //TODO: What goes here?
+                    return(
+                        <div></div>
+                    )
                 }
             })
         );
@@ -33,3 +38,4 @@ class SidebarDetail extends Component {
 }
 
 export default SidebarDetail;
+//export default withRouter(MainDetail);

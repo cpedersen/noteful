@@ -37,10 +37,12 @@ class App extends Component {
     })
       .then(response => response.json())
       .then(result => {
-        this.setState(notes => {
-          const newNotes = this.state.notes.filter(note => note.id !== note_id);
-          return newNotes
+        const newNotes = this.state.notes.filter(note => note.id !== note_id)
+        this.setState({
+          notes: newNotes
         })
+        //const history = this.props
+        //this.props.history.push('/')
       })
   }
 
@@ -67,7 +69,8 @@ class App extends Component {
       deleteNote: this.deleteNote
     }
 
-    console.log(this.state.notes)
+    //console.log(this.state.notes)
+
     return (
       <NotesContext.Provider value={contextValue}>
         <div className="App">

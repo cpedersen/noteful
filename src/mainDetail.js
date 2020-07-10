@@ -22,7 +22,11 @@ class MainDetail extends Component {
                     </div>
                     <div className="Header_Section2">
                         <button className="DeleteButton"
-                            onClick={() => notesContext.deleteNote(note[0].id)}
+                            onClick={() => {
+                                    notesContext.deleteNote(note[0].id);
+                                    this.props.history.push('/');
+                                }
+                            }
                             tag='button'
                             role='link'
                             to={'/'}>

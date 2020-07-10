@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import NotesContext from './notesContext'
 import './sidebarDetail.css';
 
@@ -37,5 +37,5 @@ class SidebarDetail extends Component {
     }
 }
 
-export default SidebarDetail;
-//export default withRouter(MainDetail);
+//export default SidebarDetail;
+export default withRouter(SidebarDetail);

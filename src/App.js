@@ -24,13 +24,6 @@ class App extends Component {
     })
   }
 
-  //For delete, make another fetch call 
-  /*deleteNote = note => {
-    this.setState({
-      notes: [ ... this.state.notes, note]
-    })
-  }*/
-
   deleteNote = note_id => {
     fetch(config.API_ENDPOINT + "/notes/" + note_id, {
       method: 'DELETE'
@@ -41,8 +34,6 @@ class App extends Component {
         this.setState({
           notes: newNotes
         })
-        //const history = this.props
-        //this.props.history.push('/')
       })
   }
 
@@ -70,27 +61,38 @@ class App extends Component {
     }
 
     //console.log(this.state.notes)
-
     return (
       <NotesContext.Provider value={contextValue}>
         <div className="App">
-          <Header/>
+          <Switch>
+            <Route
+              exact path="/" 
+              component={Header}
+            />
+            <Route 
+              path="/folder/:folder_id" 
+              component={Header}
+            />
+            <Route
+              path="/note/:note_id" 
+              component={Header}
+            />
+          </Switch>
           <div className="Section">
               <Switch>
-                <Route 
-                  exact path="/" 
-                  component={Sidebar}
-                />
-                <Route 
-                  path="/folder/:folder_id" 
-                  component={Sidebar}
-                />
-                <Route 
-                  path="/note/:note_id" 
-                  component={SidebarDetail}
-                />
+                  <Route 
+                    exact path="/" 
+                    component={Sidebar}
+                  />
+                  <Route 
+                    path="/folder/:folder_id" 
+                    component={Sidebar}
+                  />
+                  <Route 
+                    path="/note/:note_id" 
+                    component={SidebarDetail}
+                  />
               </Switch>
-              
           </div>
           <div className="Section">
               <Switch>
@@ -107,7 +109,6 @@ class App extends Component {
                   component={MainDetail}
                 />
               </Switch>
-
           </div>
         </div>
       </NotesContext.Provider>
@@ -117,6 +118,20 @@ class App extends Component {
 
 export default App;
 
+/*
+<div className="Section">
+<Switch>
+  <Route
+      exact path="/" 
+      component={Header}
+  />
+  <Route
+      path="/note/:note_id" 
+      component={Header}
+  />
+</Switch>
+</div>
+*/
 
 
 

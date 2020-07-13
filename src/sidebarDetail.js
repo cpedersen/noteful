@@ -13,14 +13,7 @@ class SidebarDetail extends Component {
                 if (folder.id === note[0].folderId) {
                     return(
                         <div className="SidebarDetail">
-                            <div className="Section_BackButton">
-                                <NavLink className="BackButton"
-                                    tag='button'
-                                    role='link'
-                                    to={'/'}>
-                                    Back
-                                </NavLink>
-                            </div>
+
                             <div className="FolderName">
                                 {folder.name}
                             </div>
@@ -37,5 +30,16 @@ class SidebarDetail extends Component {
     }
 }
 
-//export default SidebarDetail;
 export default withRouter(SidebarDetail);
+
+/*
+<div className="Section_BackButton">
+<NavLink className="BackButton"
+    tag='button'
+    role='link'
+    to={'/'}>
+    Back
+</NavLink>
+</div>
+
+*/

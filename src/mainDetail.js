@@ -6,24 +6,22 @@ import './mainDetail.css';
 
 class MainDetail extends Component {
     static contextType = NotesContext;
-
     render() {
         let notesContext = this.context
-        let note = notesContext.notes.filter(note => note.id === this.props.match.params.note_id)
-        //console.log("MainDetail note: " + JSON.stringify(note))
+        let selectedNote = notesContext.notes.filter(note => note.id === this.props.match.params.note_id)
         return (
             <section className="MainDetail">
                 <div className="MainDetail_Header">
                     <div className="Header_Section1">
-                        <div className="NoteTitle">{note[0].name}</div>
+                        <div className="NoteTitle">{selectedNote[0].name}</div>
                         <div className="Date">
-                            Modified {' '} {format(parseISO(note[0].modified), 'MM/dd/yyyy')} 
+                            Modified {' '} {format(parseISO(selectedNote[0].modified), 'MM/dd/yyyy')} 
                         </div>
                     </div>
                     <div className="Header_Section2">
                         <button className="DeleteButton"
                             onClick={() => {
-                                    notesContext.deleteNote(note[0].id);
+                                    notesContext.deleteNote(selectedNote[0].id);
                                     this.props.history.push('/');
                                 }
                             }
@@ -37,7 +35,7 @@ class MainDetail extends Component {
             
                 <div className="NoteBox">
                     <p className="NoteText">
-                    {note[0].content}
+                    {selectedNote[0].content}
                     </p>
                 </div>
             </section>
@@ -45,5 +43,4 @@ class MainDetail extends Component {
     }
 }
 
-//export default MainDetail;
 export default withRouter(MainDetail);

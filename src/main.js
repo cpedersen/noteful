@@ -19,7 +19,7 @@ class Main extends Component {
             <div className="Main">
                 {notes.map(note => {
                     return(
-                        <section className="Note">
+                        <section key={note.id} className="Note">
                             <div className="Note_Section1">
                                 <h3 className="Note_Name"><Link className="Note_Link" to={'/note/' + note.id}>{note.name}</Link></h3>
                             </div>
@@ -36,9 +36,9 @@ class Main extends Component {
                         </section>
                     )
                 })}
-                <div className="Add_Note_Button_Section">
+                <div className="AddNote_Button_Section">
                     <button 
-                        className="Add_Note_Button"
+                        className="AddNote_Button"
                         tag={Link}
                         to='/add-note'
                         type='button'

@@ -8,8 +8,7 @@
     flex-direction: column; 
     align-content: space-around;
     height: 500px;
-    padding: 0px 0px 0px 0px;
-    /*padding: 2px;*/
+    padding: 0px;
     margin: 6px;
     display: flex;
     flex-direction: column;
@@ -51,10 +50,11 @@
 
 .DeleteButton {
     background-color: lightgray;
+    border: 1px solid lightgray;
     transform: rotate(-90deg);
     width: 98px;
     top: 150px;
-    margin: 30px 0px 0px 0px;
+    margin: 31px 0px 0px 0px;
     padding: 4px;
     font-size: 20px;
     text-decoration: inherit;

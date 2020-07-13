@@ -32,7 +32,6 @@ class MainDetail extends Component {
                         </button>
                     </div>
                 </div>
-            
                 <div className="NoteBox">
                     <p className="NoteText">
                     {selectedNote[0].content}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import NotesContext from './notesContext'
 import './sidebarDetail.css';
 
@@ -12,17 +12,15 @@ class SidebarDetail extends Component {
             notesContext.folders.map(folder => {
                 if (folder.id === note[0].folderId) {
                     return(
-                        <div className="SidebarDetail">
-
+                        <div key={folder.id} className="SidebarDetail">
                             <div className="FolderName">
                                 {folder.name}
                             </div>
                         </div>
                     )
                 } else {
-                    //TODO: What goes here?
                     return(
-                        <div></div>
+                        <div key={folder.id}></div>
                     )
                 }
             })
@@ -32,14 +30,3 @@ class SidebarDetail extends Component {
 
 export default withRouter(SidebarDetail);
 
-/*
-<div className="Section_BackButton">
-<NavLink className="BackButton"
-    tag='button'
-    role='link'
-    to={'/'}>
-    Back
-</NavLink>
-</div>
-
-*/

@@ -12,7 +12,7 @@ class Sidebar extends Component {
             <div className="Sidebar">
                 {notesContext.folders.map(folder => {
                     return(
-                        <div className={(selectedFolder && selectedFolder === folder.id)? "SelectedFolder": "Folder"}>
+                        <div key={folder.id} className={(selectedFolder && selectedFolder === folder.id)? "SelectedFolder": "Folder"}>
                             <NavLink className="Folder_Link" 
                                 tag='button'
                                 role='link'
@@ -23,7 +23,7 @@ class Sidebar extends Component {
                     )
                 })}
                 <div className="AddFolder_Section">
-                    <button className="AddFolder">Add Folder</button>
+                    <button className="AddFolder_Button">Add Folder</button>
                 </div>
             </div>
         );

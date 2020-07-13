@@ -118,20 +118,3 @@ class App extends Component {
 
 export default App;
 
-/*
-<div className="Section">
-<Switch>
-  <Route
-      exact path="/" 
-      component={Header}
-  />
-  <Route
-      path="/note/:note_id" 
-      component={Header}
-  />
-</Switch>
-</div>
-*/
-
-
-

@@ -1,23 +1,17 @@
 /*border: 1px solid black;*/
-
 .Main {
-    /*background-color: #8B7B8B;*/
-    background-color: linear-gradient(
-        to right,
-        #8B7B8B 0%,
-        #8B7B8B 100%,
-    );
+    background-color: #8B7B8B;
     color: white;
     float: left;
     text-align: left;
-    width: 69%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-content: space-around;
 }
 
 .Note {
-    background-color: #2E0854; 
+    background-color:#696969;
     color: white;
     margin: 0px 15px 15px 15px;
     padding: 0px 6px 6px 6px;
@@ -45,12 +39,19 @@
     
 }
 
-.Add_Note_Button_Section {
+.AddNote_Button_Section {
     text-align: center;
 }
 
-.Add_Note_Button {
-
+.AddNote_Button {
+    color: #2E0854;
+    border: 1px solid lightgray;
+    background-color: lightgray;   
+    padding: 12px;
+    text-align: center;
+    text-decoration: inherit;
+    border-radius: 50%;
+    font-size: 14px;
 }
 
 .Note_Name {

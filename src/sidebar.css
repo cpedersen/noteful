@@ -9,10 +9,16 @@
 }
 
 .Folder {
-    background-color: #2E0854; 
+    background-color: #573976;
     padding: 15px 15px 15px 15px;
     margin: 0px 6px 12px 6px;
     text-align: center;
+}
+
+.SelectedFolder {
+    background-color: #2E0854; 
+    padding: 15px 15px 15px 15px;
+    margin: 0px 6px 12px 6px;
 }
 
 .Folder_Link {
@@ -24,8 +30,13 @@
     background-color: #8B7B8B;;
 }
 
-.SelectedFolder {
-    background-color: #B452CD;
-    padding: 15px 15px 15px 15px;
-    margin: 0px 6px 12px 6px;
+.AddFolder_Button {
+    border: 1px solid lightgray;
+    background-color: lightgray;   
+    color: #2E0854;
+    padding: 12px;
+    text-align: center;
+    text-decoration: inherit;
+    border-radius: 50%;
+    font-size: 14px;
 }

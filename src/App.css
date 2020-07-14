@@ -1,6 +1,9 @@
+body {
+    /*background-image: linear-gradient( #8B7B8B, #b9afb9);*/
+}
+
 .App {
     margin: 25px 25px 25px 25px;
-    /*background-color: #CDB5CD;*/
     background-color:  #8B7B8B;
 }
 

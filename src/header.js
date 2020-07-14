@@ -24,7 +24,7 @@ class Header extends Component {
         } else {
             return( 
                 <div className="HeaderBox_WithNote">
-                    <div className="Header_Sidebar">
+                    <div className="Header_Sidebar_WithNote">
                         <div className="Section_BackButton">
                             <NavLink className="BackButton"
                                 tag='button'
@@ -34,7 +34,7 @@ class Header extends Component {
                             </NavLink>
                         </div>
                     </div>
-                    <div className="Header_Main">
+                    <div className="Header_Main_WithNote">
                         <h1 className="HeadingText">
                         <Link className="Header_Link" to={'/'}>
                             Noteful

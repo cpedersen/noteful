@@ -1,4 +1,3 @@
-/* border: 1px solid black; */
 .SidebarDetail {
     background-color: #8B7B8B;
     padding: auto;
@@ -9,12 +8,11 @@
     background-color: #8B7B8B;
     color: white;
     float: left;
-    width: 10%;
-    margin: 0px 15px 15px 15px;
+    width: 11%;
     display: flex;
     flex-direction: column; 
     align-content: space-around;
-    padding: 15px;
+    padding: 18px;
     margin: 6px;
     writing-mode: vertical-rl;
     text-orientation: upright;

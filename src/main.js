@@ -4,6 +4,7 @@ import { format, parseISO } from 'date-fns'
 import NotesContext from './notesContext'
 import './main.css';
 import './notes-helpers.js'
+import AddNote from './addNote'
 
 class Main extends Component {
     static contextType = NotesContext

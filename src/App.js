@@ -8,6 +8,8 @@ import SidebarDetail from './sidebarDetail.js'
 import NotesContext from './notesContext'
 import './App.css'
 import config from './config'
+import AddFolder from './addFolder'
+//import AddNote from './addNote'
 
 class App extends Component {
   state = {
@@ -26,7 +28,10 @@ class App extends Component {
 
   deleteNote = note_id => {
     fetch(config.API_ENDPOINT + "/notes/" + note_id, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json'
+      }
     })
       .then(response => response.json())
       .then(result => {

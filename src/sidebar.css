@@ -27,8 +27,20 @@
 }
 
 .AddFolder_Section {
-    background-color: #8B7B8B;;
+    background-color: #8B7B8B;
+    margin: 10px;
 }
+
+/*.AddFolder_Button {
+    border: 1px solid lightgray;
+    background-color: lightgray;   
+    color: #2E0854;
+    padding: 12px;
+    text-align: center;
+    text-decoration: inherit;
+    border-radius: 50%;
+    font-size: 14px;
+}*/
 
 .AddFolder_Button {
     border: 1px solid lightgray;

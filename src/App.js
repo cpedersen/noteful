@@ -72,7 +72,6 @@ class App extends Component {
       addFolder: this.addFolder
     }
 
-    //console.log(this.state.notes)
     return (
       <NotesContext.Provider value={contextValue}>
         <section className="App">

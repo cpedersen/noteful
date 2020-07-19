@@ -11,7 +11,6 @@ class AddFolder extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-
     handleChange(event) {
         console.log("event: " + event.target.value)
         this.setState({name: event.target.value});
@@ -31,13 +30,13 @@ class AddFolder extends Component {
           .then(response => response.json())
           .then(result => {
               console.log(result);
-              this.context.addFolder(result.name, result.id)
+              this.context.addFolder(result.name, result.id);
+              this.props.history.push("/");
             })
           .catch(error => console.log('error', error));
     }
 
     render() {
-        console.log("Made it inside addFolder render");
         return (
             <form className="AddFolder" onSubmit={e => this.handleSubmit(e)}>
                 <h1>Create a folder</h1>
@@ -52,7 +51,7 @@ class AddFolder extends Component {
                         onChange={e => this.handleChange(e)}
                     />
                 </label>
-                    {this.state.name}
+                    
                 <input 
                     type="submit" 
                     value="Submit"

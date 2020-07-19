@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link, NavLink, withRouter } from 'react-router-dom'
 import { format, parseISO } from 'date-fns'
 import NotesContext from './notesContext'
-import AddFolder from './addFolder'
 import './main.css';
 import './notes-helpers.js'
 
@@ -55,4 +54,3 @@ class Main extends Component {
 }
 
 export default withRouter(Main);
-

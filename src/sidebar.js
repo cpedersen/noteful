@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { NavLink, Route, Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import NotesContext from './notesContext'
-import AddFolder from './addFolder'
 import './sidebar.css'
 
 class Sidebar extends Component {
@@ -43,44 +42,3 @@ class Sidebar extends Component {
 }
 
 export default Sidebar;
-
-
-
-/*
-render={() => {
-    return <AddFolder/>
-}}
-*/
-
-/*
-<Route
-path='/add-folder'
-render={() => <h1>TESTING</h1> }
-/>
-*/
-
-//target="_blank"
-//onClick={AddFolder}
-
-//<FontAwesomeIcon icon='plus' />
-
-/*
-<Route
-path='/add-folder'
-component={AddFolder}
-/>  
-*/
-
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import { FontAwesomeIcon } from '@fortawesome/fontawesome-free'
-
-/*
-                    <Route
-                        path='/add-folder'
-                        render={(props) => 
-                            <AddFolder
-                                {...props}
-                            />    
-                        }
-                    />  
-*/

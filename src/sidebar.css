@@ -6,6 +6,8 @@
     display: flex;
     flex-direction: column; 
     align-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
 .Folder {
@@ -13,12 +15,15 @@
     padding: 15px 15px 15px 15px;
     margin: 0px 6px 12px 6px;
     text-align: center;
+    display: block;
+    width: 180px;
 }
 
 .SelectedFolder {
     background-color: #2E0854; 
     padding: 15px 15px 15px 15px;
     margin: 0px 6px 12px 6px;
+    width: 180px;
 }
 
 .Folder_Link {
@@ -28,7 +33,7 @@
 
 .AddFolder_Section {
     background-color: #8B7B8B;
-    margin: 10px;
+    margin: 20px auto;
 }
 
 /*.AddFolder_Button {
@@ -51,4 +56,10 @@
     text-decoration: inherit;
     border-radius: 50%;
     font-size: 14px;
+}
+
+.Selected {
+    color: #8B7B8B;
+    text-decoration: underline;
+    font-weight: bold;
 }

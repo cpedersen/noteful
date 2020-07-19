@@ -5,9 +5,22 @@ body {
 .App {
     margin: 25px 25px 25px 25px;
     background-color:  #8B7B8B;
+    display: grid | inline-grid;
+    grid-template-columns: 20px 200px;
+
+    /*min-height: 100vh;
+    grid-template-rows: 120px 1fr;
+    grid-template-columns: 1fr 2.3fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";*/
 }
 
-.Section {
+.Section_Sidebar {
+    color: white;
+}
+
+.Section_Main {
     color: white;
 }
 

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link, NavLink, withRouter } from 'react-router-dom'
 import { format, parseISO } from 'date-fns'
 import NotesContext from './notesContext'
+import AddFolder from './addFolder'
 import './main.css';
 import './notes-helpers.js'
-import AddNote from './addNote'
 
 class Main extends Component {
     static contextType = NotesContext
@@ -17,7 +17,7 @@ class Main extends Component {
             notes = notesContext.notes
         }
         return (
-            <div className="Main">
+            <section className="Main">
                 {notes.map(note => {
                     return(
                         <section key={note.id} className="Note">
@@ -37,20 +37,22 @@ class Main extends Component {
                         </section>
                     )
                 })}
-                <div className="AddNote_Button_Section">
-                    <button 
+                <section className="AddNote_Button_Section">
+                    <NavLink 
                         className="AddNote_Button"
                         tag={Link}
-                        to='/add-note'
+                        to={'/add-note'}
                         type='button'
                     >
                     Add Note 
-                    </button>
-                </div>
-            </div>
+                    </NavLink>
+                </section>
+            </section>
+            
         );
 
     }
 }
 
 export default withRouter(Main);
+

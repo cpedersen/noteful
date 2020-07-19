@@ -1,7 +1,7 @@
 .SidebarDetail {
     background-color: #8B7B8B;
     padding: auto;
-    margin: auto;
+    
 }
 
 .FolderName {
@@ -9,8 +9,8 @@
     color: white;
     float: left;
     width: 11%;
-    display: flex;
-    flex-direction: column; 
+    /*display: flex;
+    flex-direction: column; */
     align-content: space-around;
     padding: 18px;
     margin: 6px;
@@ -20,6 +20,5 @@
     flex-wrap: nowrap;
     font-size: 45px;
 }
-
 
 

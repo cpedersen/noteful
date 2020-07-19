@@ -9,7 +9,7 @@ import NotesContext from './notesContext'
 import './App.css'
 import config from './config'
 import AddFolder from './addFolder'
-//import AddNote from './addNote'
+import AddNote from './addNote'
 
 class App extends Component {
   state = {
@@ -42,6 +42,12 @@ class App extends Component {
       })
   }
 
+  addFolder = (name, id) => {
+    this.setState({
+      folders: [...this.state.folders, {name, id}]
+    })
+  }
+
   componentDidMount() {
     Promise.all([
       fetch(config.API_ENDPOINT + "/notes"),
@@ -62,13 +68,14 @@ class App extends Component {
     const contextValue = {
       notes: this.state.notes,
       folders: this.state.folders,
-      deleteNote: this.deleteNote
+      deleteNote: this.deleteNote,
+      addFolder: this.addFolder
     }
 
     //console.log(this.state.notes)
     return (
       <NotesContext.Provider value={contextValue}>
-        <div className="App">
+        <section className="App">
           <Switch>
             <Route
               exact path="/" 
@@ -83,7 +90,7 @@ class App extends Component {
               component={Header}
             />
           </Switch>
-          <div className="Section">
+          <section className="Section_Sidebar">
               <Switch>
                   <Route 
                     exact path="/" 
@@ -98,8 +105,8 @@ class App extends Component {
                     component={SidebarDetail}
                   />
               </Switch>
-          </div>
-          <div className="Section">
+          </section>
+          <section className="Section_Main">
               <Switch>
                 <Route 
                   exact path="/" 
@@ -113,9 +120,17 @@ class App extends Component {
                   path="/note/:note_id" 
                   component={MainDetail}
                 />
+                <Route 
+                  path="/add-folder" 
+                  component={AddFolder}
+                />
+                <Route 
+                  path="/add-note" 
+                  component={AddNote}
+                />
               </Switch>
-          </div>
-        </div>
+          </section>
+        </section>
       </NotesContext.Provider>
     );
   } 

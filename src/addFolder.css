@@ -1,12 +1,12 @@
 .AddFolder {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     margin: 20px;
 }
 
-.FolderNameInput {
-    border: 1px solid black;
+.NameInput {
+    
 }
 
 .SubmitButton {
-    
+    margin: 20px;
 }

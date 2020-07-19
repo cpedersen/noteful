@@ -6,10 +6,10 @@ import MainDetail from './mainDetail.js'
 import Sidebar from './sidebar.js'
 import SidebarDetail from './sidebarDetail.js'
 import NotesContext from './notesContext'
-import './App.css'
 import config from './config'
 import AddFolder from './addFolder'
 import AddNote from './addNote'
+import './App.css'
 
 class App extends Component {
   state = {
@@ -48,6 +48,12 @@ class App extends Component {
     })
   }
 
+  addNote = (name, id, folderId, modified, content) => {
+    this.setState({
+      notes: [...this.state.notes, {name, id, folderId, modified, content}]
+    })
+  }
+
   componentDidMount() {
     Promise.all([
       fetch(config.API_ENDPOINT + "/notes"),
@@ -69,7 +75,8 @@ class App extends Component {
       notes: this.state.notes,
       folders: this.state.folders,
       deleteNote: this.deleteNote,
-      addFolder: this.addFolder
+      addFolder: this.addFolder,
+      addNote: this.addNote
     }
 
     return (

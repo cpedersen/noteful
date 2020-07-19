@@ -23,6 +23,7 @@ class AddNote extends Component {
     }
 
     handleSubmit(event) {
+        console.log("this.context: " + JSON.stringify(this.context))
         event.preventDefault();
         console.log('Note Name: ', this.state.name);
         console.log('Note Folder Id: ', this.state.folderId);
@@ -48,8 +49,8 @@ class AddNote extends Component {
                   result.name, 
                   result.id, 
                   result.folderId, 
-                  result.content, 
-                  result.modified
+                  result.modified,
+                  result.content
                 );
               this.props.history.push("/");
             })

@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 import NotesContext from './notesContext'
-//import { format, parseISO } from 'date-fns'
 import './addNote.css'
-
-//TODO:
-//- Add menu pick to select folder
-//- Generate modified value
 
 class AddNote extends Component {
     static contextType = NotesContext
@@ -14,27 +9,34 @@ class AddNote extends Component {
         this.state = {
             name: '',
             id: '',
-            folderId: '',
-            content: "Hello!"
+            folderId: 'b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1',
+            content: "",
+            value: '',
         }
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeOfNote = this.handleChangeOfNote.bind(this);
+        this.handleChangeOfFolder = this.handleChangeOfFolder.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
-        console.log("event: " + event.target.value)
-        const value = event.target.value;
-
+    handleChangeOfNote(event) {
+        //console.log("handleChange value: " + event.target.value);
+        //console.log("handleChange name: " + event.target.name);
         this.setState(
-            {[event.target.name]: event.target.value});
+            {[event.target.name]: event.target.value}
+        );
+    }
+
+    handleChangeOfFolder(event) {
+        //console.log("handleChange value: " + event.target.value);
+        //console.log("handleChange folderId: " + this.state.folderId);
+        this.setState(
+            {folderId: event.target.value}
+        );
     }
 
     handleSubmit(event) {
         //console.log("this.context: " + JSON.stringify(this.context))
         event.preventDefault();
-        console.log('Note Name: ', this.state.name);
-        console.log('Note Folder Id: ', this.state.folderId);
-        console.log('Note Content: ', this.state.content);
         let requestOptions = {
           method: 'POST',
           headers: {
@@ -51,7 +53,7 @@ class AddNote extends Component {
         fetch("http://localhost:9090/notes/", requestOptions)
           .then(response => response.json())
           .then(result => {
-              console.log(result);
+              console.log("result:" + JSON.stringify(result));
               this.context.addNote(
                   result.name, 
                   result.id, 
@@ -65,12 +67,12 @@ class AddNote extends Component {
     }
 
     render() {
-        //console.log("Folders: " + JSON.stringify(this.context.folders))
         let notesContext = this.context
-        const selectedFolder = this.props.match.params.folder_id || {}
-
         return (
-            <form className="AddNote" onSubmit={e => this.handleSubmit(e)}>
+            <form 
+                className="AddNote" 
+                onSubmit={e => this.handleSubmit(e)}
+            >
                 <h1>Create a note</h1>
                 <label>
                     Note Name:{' '}
@@ -80,7 +82,7 @@ class AddNote extends Component {
                         className="NameInput" 
                         name="name" 
                         id="name"
-                        onChange={e => this.handleChange(e)}
+                        onChange={(e) => this.handleChangeOfNote(e)}
                     />
                 </label>
 
@@ -90,28 +92,21 @@ class AddNote extends Component {
                         className="ContentInput" 
                         name="content" 
                         id="content"  
-                        onChange={e => this.handleChange(e)}
+                        onChange={e => this.handleChangeOfNote(e)}
                     />
                 </label>
 
-                {/*<label>
-                    Folder:{' '}
-                    <input 
-                        type="text" 
-                        value={this.state.folderId}
-                        className="FolderInput" 
-                        name="folderId" 
-                        id="folderId"
-                        onChange={e => this.handleChange(e)}
-                    />
-                </label>*/}
-
                 <label>
                     Folder:{' '}
-                    <select value={this.state.folderId} onChange={e => this.handleChange(e)}>
+                    <select 
+                        value={this.state.folderId} onChange={(e) => this.handleChangeOfFolder(e)}>
                         {notesContext.folders.map(folder => {
                             return(
-                                <option value={folder.name} key={folder.id}>{folder.name}</option>
+                                <option 
+                                    value={folder.id} 
+                                    name={folder.name} 
+                                    key={folder.id}>{folder.name}
+                                </option>
                             )
                         })}
                     </select>
@@ -128,6 +123,3 @@ class AddNote extends Component {
 }
 
 export default AddNote;
-
-//defaultValue="b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1"
-//defaultValue="Hello there!"

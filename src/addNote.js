@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 import NotesContext from './notesContext'
+//import { format, parseISO } from 'date-fns'
 import './addNote.css'
+
+//TODO:
+//- Add menu pick to select folder
+//- Generate modified value
 
 class AddNote extends Component {
     static contextType = NotesContext
     constructor(props) {
         super(props);
         this.state = {
-            name: 'Cows',
+            name: '',
             id: '',
-            folderId: 'b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1',
-            modified: '2019-01-03T00:00:00.000Z',
+            folderId: '',
             content: "Hello!"
         }
         this.handleChange = this.handleChange.bind(this);
@@ -19,11 +23,14 @@ class AddNote extends Component {
 
     handleChange(event) {
         console.log("event: " + event.target.value)
-        this.setState({name: event.target.value});
+        const value = event.target.value;
+
+        this.setState(
+            {[event.target.name]: event.target.value});
     }
 
     handleSubmit(event) {
-        console.log("this.context: " + JSON.stringify(this.context))
+        //console.log("this.context: " + JSON.stringify(this.context))
         event.preventDefault();
         console.log('Note Name: ', this.state.name);
         console.log('Note Folder Id: ', this.state.folderId);
@@ -37,7 +44,7 @@ class AddNote extends Component {
               "name": this.state.name,
               "id": this.state.id,
               "folderId": this.state.folderId,
-              "modified": this.state.modified,
+              "modified": new Date().toISOString(),
               "content": this.state.content
             })
         };
@@ -58,11 +65,15 @@ class AddNote extends Component {
     }
 
     render() {
+        //console.log("Folders: " + JSON.stringify(this.context.folders))
+        let notesContext = this.context
+        const selectedFolder = this.props.match.params.folder_id || {}
+
         return (
             <form className="AddNote" onSubmit={e => this.handleSubmit(e)}>
                 <h1>Create a note</h1>
                 <label>
-                    Name:{' '}
+                    Note Name:{' '}
                     <input 
                         type="text" 
                         value={this.state.name}
@@ -75,9 +86,7 @@ class AddNote extends Component {
 
                 <label>
                     Content:{' '}
-                    <input 
-                        type="text" 
-                        value={this.state.content}
+                    <textarea
                         className="ContentInput" 
                         name="content" 
                         id="content"  
@@ -85,7 +94,7 @@ class AddNote extends Component {
                     />
                 </label>
 
-                <label>
+                {/*<label>
                     Folder:{' '}
                     <input 
                         type="text" 
@@ -95,7 +104,19 @@ class AddNote extends Component {
                         id="folderId"
                         onChange={e => this.handleChange(e)}
                     />
+                </label>*/}
+
+                <label>
+                    Folder:{' '}
+                    <select value={this.state.folderId} onChange={e => this.handleChange(e)}>
+                        {notesContext.folders.map(folder => {
+                            return(
+                                <option value={folder.name} key={folder.id}>{folder.name}</option>
+                            )
+                        })}
+                    </select>
                 </label>
+
                 <input 
                     type="submit" 
                     value="Submit"

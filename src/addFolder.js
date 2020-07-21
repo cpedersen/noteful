@@ -12,13 +12,12 @@ class AddFolder extends Component {
     }
 
     handleChange(event) {
-        console.log("event: " + event.target.value)
+        //console.log("event: " + event.target.value)
         this.setState({name: event.target.value});
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log('Folder Name: ', this.state.name);
         let requestOptions = {
           method: 'POST',
           headers: {

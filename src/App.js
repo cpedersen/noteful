@@ -9,8 +9,7 @@ import NotesContext from './notesContext'
 import config from './config'
 import AddFolder from './addFolder'
 import AddNote from './addNote'
-import ErrorBoundary from './errorBoundary'
-import ValidationError from './validationError'
+//import ErrorBoundary from './errorBoundary'
 import './App.css'
 
 class App extends Component {
@@ -57,9 +56,6 @@ class App extends Component {
   }
 
   validateName(name) {
-    console.log("Inside validateName");
-    //const name = this.state.name.trim();
-    console.log("name: " + name);
     if (name.length === 0) {
       return 'Name is required';
     } else if (name.length < 3) {

@@ -9,7 +9,7 @@ class AddNote extends Component {
         this.state = {
             name: '',
             id: '',
-            folderId: 'b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1',
+            folderId: '',
             content: "",
             value: '',
         }
@@ -19,23 +19,18 @@ class AddNote extends Component {
     }
 
     handleChangeOfNote(event) {
-        //console.log("handleChange value: " + event.target.value);
-        //console.log("handleChange name: " + event.target.name);
         this.setState(
             {[event.target.name]: event.target.value}
         );
     }
 
     handleChangeOfFolder(event) {
-        //console.log("handleChange value: " + event.target.value);
-        //console.log("handleChange folderId: " + this.state.folderId);
         this.setState(
             {folderId: event.target.value}
         );
     }
 
     handleSubmit(event) {
-        //console.log("this.context: " + JSON.stringify(this.context))
         event.preventDefault();
         let requestOptions = {
           method: 'POST',
@@ -53,7 +48,7 @@ class AddNote extends Component {
         fetch("http://localhost:9090/notes/", requestOptions)
           .then(response => response.json())
           .then(result => {
-              console.log("result:" + JSON.stringify(result));
+              //console.log("result:" + JSON.stringify(result));
               this.context.addNote(
                   result.name, 
                   result.id, 
@@ -64,6 +59,16 @@ class AddNote extends Component {
               this.props.history.push("/");
             })
           .catch(error => console.log('error', error));
+    }
+
+    validateName() {
+        return this.context.validateName(this.state.name)
+    }
+
+    componentDidMount() {
+        this.setState ({
+            folderId: this.context.folders[0].id
+        });
     }
 
     render() {
@@ -116,6 +121,9 @@ class AddNote extends Component {
                     type="submit" 
                     value="Submit"
                     className="SubmitButton"
+                    disabled={
+                        this.validateName()
+                    }
                 />
             </form>
         );

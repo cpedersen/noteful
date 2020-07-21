@@ -44,6 +44,7 @@
 
 .AddNote_Button_Section {
     text-align: center;
+    margin: 20px auto;
 }
 
 .AddNote_Button {
@@ -55,7 +56,7 @@
     text-decoration: inherit;
     border-radius: 50%;
     font-size: 14px;
-    margin: 20px auto;
+    /*margin: 20px auto;*/
 }
 
 .Note_Name {

@@ -5,7 +5,7 @@ body {
 .App {
     margin: 25px 25px 25px 25px;
     background-color:  #8B7B8B;
-    width: 75%;
+    /*width: 75%;*/
     /*display: grid | inline-grid;
     grid-template-columns: 20px 200px;*/
 
@@ -17,19 +17,39 @@ body {
         "sidebar main";*/
 }
 
+/* How prevent overlapping sections? */
+/* 1. Use width percentages */
+/* 2. Use max-width */
+/* 3. Use display: block */
+
+.Section_All {
+    width: 100%;
+    margin: auto;
+    max-width: 1200px;
+}
+
 .Section_Sidebar {
     color: white;
-    display: inline;
-    width: 20%;
-    height: 100%;
-
+    display: block;
+    /*float: left;
+    clear: both;*/
+    /*display: inline;
+    width: 30%;
+    max-width: 100px;
+    height: 100%;*/
 }
 
 .Section_Main {
     color: white;
+    display: block;
+    /*float: left;
+    clear: both;*/
+    /*width: 70%;
+    max-width: 600px;
+    float: left;
+    margin: 0px 0px 0px 100px;
     display: inline;
-    width: 80%;
-    height: 100%;
+    height: 100%;*/
 }
 
 /*.Left-Half {

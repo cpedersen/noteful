@@ -36,6 +36,10 @@ class AddFolder extends Component {
           .catch(error => console.log('error', error));
     }
 
+    validateName() {
+        return this.context.validateName(this.state.name)
+    }
+
     render() {
         return (
             <form className="AddFolder" onSubmit={e => this.handleSubmit(e)}>
@@ -56,6 +60,9 @@ class AddFolder extends Component {
                     type="submit" 
                     value="Submit"
                     className="SubmitButton"
+                    disabled={
+                        this.validateName()
+                    }
                 />
             </form>
         );

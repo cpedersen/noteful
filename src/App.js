@@ -9,6 +9,8 @@ import NotesContext from './notesContext'
 import config from './config'
 import AddFolder from './addFolder'
 import AddNote from './addNote'
+import ErrorBoundary from './errorBoundary'
+import ValidationError from './validationError'
 import './App.css'
 
 class App extends Component {
@@ -54,6 +56,19 @@ class App extends Component {
     })
   }
 
+  validateName(name) {
+    console.log("Inside validateName");
+    //const name = this.state.name.trim();
+    console.log("name: " + name);
+    if (name.length === 0) {
+      return 'Name is required';
+    } else if (name.length < 3) {
+      return 'Name must be at least 3 characters long';
+    } else if (name.length > 49) {
+      return 'Name must be less than 50 characters long';
+    }
+  }
+
   componentDidMount() {
     Promise.all([
       fetch(config.API_ENDPOINT + "/notes"),
@@ -76,65 +91,72 @@ class App extends Component {
       folders: this.state.folders,
       deleteNote: this.deleteNote,
       addFolder: this.addFolder,
-      addNote: this.addNote
+      addNote: this.addNote,
+      validateName: this.validateName
     }
 
     return (
       <NotesContext.Provider value={contextValue}>
         <section className="App">
-          <Switch>
-            <Route
-              exact path="/" 
-              component={Header}
-            />
-            <Route 
-              path="/folder/:folder_id" 
-              component={Header}
-            />
-            <Route
-              path="/note/:note_id" 
-              component={Header}
-            />
-          </Switch>
-          <section className="Section_Sidebar">
+            <section className="Section_All">
+              <section className="Section_Header">
               <Switch>
-                  <Route 
-                    exact path="/" 
-                    component={Sidebar}
-                  />
-                  <Route 
-                    path="/folder/:folder_id" 
-                    component={Sidebar}
-                  />
-                  <Route 
-                    path="/note/:note_id" 
-                    component={SidebarDetail}
-                  />
-              </Switch>
-          </section>
-          <section className="Section_Main">
-              <Switch>
-                <Route 
+                <Route
                   exact path="/" 
-                  component={Main}
-                  />
+                  component={Header}
+                />
                 <Route 
                   path="/folder/:folder_id" 
-                  component={Main}
+                  component={Header}
                 />
-                <Route 
+                <Route
                   path="/note/:note_id" 
-                  component={MainDetail}
-                />
-                <Route 
-                  path="/add-folder" 
-                  component={AddFolder}
-                />
-                <Route 
-                  path="/add-note" 
-                  component={AddNote}
+                  component={Header}
                 />
               </Switch>
+            </section>
+            <section className="Section_Sidebar">
+                <Switch>
+                    <Route 
+                      exact path="/" 
+                      component={Sidebar}
+                    />
+                    <Route 
+                      path="/folder/:folder_id" 
+                      component={Sidebar}
+                    />
+                    <Route 
+                      path="/note/:note_id" 
+                      component={SidebarDetail}
+                    />
+                </Switch>
+            </section>
+            <section className="Section_Main">
+
+                  <Switch>
+                    <Route 
+                      exact path="/" 
+                      component={Main}
+                      />
+                    <Route 
+                      path="/folder/:folder_id" 
+                      component={Main}
+                    />
+                    <Route 
+                      path="/note/:note_id" 
+                      component={MainDetail}
+                    />
+                    <Route 
+                      path="/add-folder" 
+                      component={AddFolder}
+                    />
+                    <Route 
+                      path="/add-note" 
+                      component={AddNote}
+                    />
+                  </Switch>
+
+            </section>
           </section>
         </section>
       </NotesContext.Provider>

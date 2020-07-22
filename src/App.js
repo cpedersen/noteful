@@ -109,6 +109,14 @@ class App extends Component {
                   path="/note/:note_id" 
                   component={Header}
                 />
+                <Route
+                  path="/note/add-note" 
+                  component={Header}
+                />
+                <Route
+                  path="/note/add-folder" 
+                  component={Header}
+                />
               </Switch>
             </section>
             <section className="Section_SidebarMainEmpty">

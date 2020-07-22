@@ -16,7 +16,7 @@
     color: white;
     margin: 0px 15px 15px 15px;
     padding: 0px 6px 6px 6px;
-    width: 380px;
+    width: 350px;
     position: relative;
 }
 
@@ -52,7 +52,8 @@
     text-decoration: inherit;
     border-radius: 20%;
     font-size: 14px;
-    /*margin: 20px auto;*/
+    margin: 20px auto;
+    white-space: nowrap;
 }
 
 .Note_Name {
@@ -67,7 +68,7 @@
 }
 
 
-@media only screen and (max-width: 1050px) {
+/*@media only screen and (max-width: 1050px) {
     body { 
         font-size: 1rem;
         line-height: 100%;
@@ -115,5 +116,5 @@
         font-size: .8rem;
         line-height: 80%;
     }
-}
+}*/
 

@@ -23,6 +23,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     width: 80%;
+    width: 400px;
 }
 
 .Header_Section1 {
@@ -62,6 +63,7 @@
 .NoteBox {
     width: 80%;
     height: 500px;
+    width: 400px;
     color: black;
     background-color: white;
     font-size: 1rem;

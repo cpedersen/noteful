@@ -9,7 +9,16 @@ class Header extends Component {
         let notesContext = this.context
         let selectedNote = []
         selectedNote = notesContext.notes.filter(note => note.id === this.props.match.params.note_id)
-        if (selectedNote.length === 0) {
+
+        //Check if we're on the main page by looking at last 5 characters of the url
+        /*console.log("url: " + window.location.href)
+        let urlCurrent = window.location.href
+        urlCurrent = urlCurrent.substr(urlCurrent.length - 5)
+        urlCurrent = urlCurrent.substring(0, urlCurrent.length - 1)
+        console.log("portNumber: " + urlCurrent)*/
+
+        if (selectedNote.length === 0 ) {
+        /*if (selectedNote.length === 0 && urlCurrent === "3000") {*/
             return( 
                 <div className="HeaderBox">
                     <div className="Header_Sidebar"></div>

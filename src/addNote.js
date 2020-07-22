@@ -80,45 +80,47 @@ class AddNote extends Component {
                 onSubmit={e => this.handleSubmit(e)}
             >
                 <h1>Create a note</h1>
-                <label>
-                    Note Name:{' '}
-                    <input 
-                        type="text" 
-                        value={this.state.name}
-                        className="NameInput" 
-                        name="name" 
-                        id="name"
-                        onChange={(e) => this.handleChangeOfNote(e)}
-                    />
-                </label>
+                <section class="InputFields">
+                    <label>
+                        Note Name:{' '}
+                        <input 
+                            type="text" 
+                            value={this.state.name}
+                            className="NameInput" 
+                            name="name" 
+                            id="name"
+                            onChange={(e) => this.handleChangeOfNote(e)}
+                        />
+                    </label>
 
-                <label>
-                    Content:{' '}
-                    <textarea
-                        className="ContentInput" 
-                        name="content" 
-                        id="content"  
-                        onChange={e => this.handleChangeOfNote(e)}
-                    />
-                </label>
+                    <label>
+                        Content:{' '}
+                        <textarea
+                            className="ContentInput" 
+                            name="content" 
+                            id="content"  
+                            onChange={e => this.handleChangeOfNote(e)}
+                        />
+                    </label>
 
-                <label>
-                    Folder:{' '}
-                    <select 
-                        value={this.state.folderId} onChange={(e) => this.handleChangeOfFolder(e)}>
-                        {notesContext.folders.map(folder => {
-                            return(
-                                <option 
-                                    value={folder.id} 
-                                    name={folder.name} 
-                                    key={folder.id}>
-                                    {folder.name}
-                                </option>
-                            )
-                        })}
-                    </select>
-                </label>
-
+                    <label>
+                        Folder:{' '}
+                        <select 
+                            value={this.state.folderId} onChange={(e) => this.handleChangeOfFolder(e)}>
+                            {notesContext.folders.map(folder => {
+                                return(
+                                    <option 
+                                        value={folder.id} 
+                                        name={folder.name} 
+                                        key={folder.id}>
+                                        {folder.name}
+                                    </option>
+                                )
+                            })}
+                        </select>
+                    </label>
+                    
+                </section>
                 <input 
                     type="submit" 
                     value="Submit"

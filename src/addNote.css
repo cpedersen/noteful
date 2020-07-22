@@ -1,9 +1,14 @@
 .AddNote {
-    /*border: 1px solid black;*/
     margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.InputFields {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
 }
 
 .NameInput {

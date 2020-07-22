@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-//import { NavLink, Link } from 'react-router-dom'
 import NotesContext from './notesContext'
-//import './errorBoundary.css'
 
 class ErrorBoundary extends Component {
     constructor(props) {
@@ -15,18 +13,15 @@ class ErrorBoundary extends Component {
     static getDerivedStateFromError(error) {
         // Update state so the next render will show the fallback UI.
         return { hasError: true };
-      }
-    
-    /*componentDidCatch(error, errorInfo) {
-        logErrorToMyService(error, errorInfo);
-    }*/
+    }
 
     render() {
         if (this.state.hasError) {
             return (
-                <h1 className="ErrorBoundary">Something went wrong.</h1>
+                <h2 className="ErrorBoundary">Something went wrong.</h2>
             );
         }
+        return this.props.children; 
     }
 }
 

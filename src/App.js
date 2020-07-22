@@ -9,7 +9,7 @@ import NotesContext from './notesContext'
 import config from './config'
 import AddFolder from './addFolder'
 import AddNote from './addNote'
-//import ErrorBoundary from './errorBoundary'
+import ErrorBoundary from './errorBoundary'
 import './App.css'
 
 class App extends Component {
@@ -128,7 +128,7 @@ class App extends Component {
                 </Switch>
             </section>
             <section className="Section_Main">
-
+                <ErrorBoundary>
                   <Switch>
                     <Route 
                       exact path="/" 
@@ -151,7 +151,7 @@ class App extends Component {
                       component={AddNote}
                     />
                   </Switch>
-
+                </ErrorBoundary>
             </section>
           </section>
         </section>

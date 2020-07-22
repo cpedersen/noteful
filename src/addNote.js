@@ -48,7 +48,6 @@ class AddNote extends Component {
         fetch("http://localhost:9090/notes/", requestOptions)
           .then(response => response.json())
           .then(result => {
-              //console.log("result:" + JSON.stringify(result));
               this.context.addNote(
                   result.name, 
                   result.id, 
@@ -66,9 +65,11 @@ class AddNote extends Component {
     }
 
     componentDidMount() {
-        this.setState ({
-            folderId: this.context.folders[0].id
-        });
+        if (this.context.folders) {
+            this.setState ({
+                folderId: this.context.folders[0].id
+            });
+        }
     }
 
     render() {
@@ -110,7 +111,8 @@ class AddNote extends Component {
                                 <option 
                                     value={folder.id} 
                                     name={folder.name} 
-                                    key={folder.id}>{folder.name}
+                                    key={folder.id}>
+                                    {folder.name}
                                 </option>
                             )
                         })}

@@ -28,6 +28,74 @@
 }
 
 
+
+/*.HeaderBox {
+    background-color: #8B7B8B;
+    color: white;
+    margin: 0px 0 1.4rem 20%;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+}*/
+
+.HeaderBox {
+    background-color: #8B7B8B;
+    color: white;
+    width: 100%;
+    margin: 2rem 0 1rem 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.Header_Sidebar {
+
+    width: 18%;
+    padding: 0px 0px;
+}
+
+.Header_Main {
+    margin: 0px 0px 0px 100px;
+    border: 1px solid black;
+}
+
+.Header_Link {
+    color: white;
+}
+
+.HeadingText {
+    color: white;
+    text-align: left;
+    margin: 2px 2px 2px 2px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0 0 0.75rem 0;
+    color: white;
+}
+
+.Section_BackButton {
+    background-color: #8B7B8B;
+    color: black;
+    height: 40px;
+    /*width: 75px;*/
+    padding: 10px 10px 0px 20px;
+    margin: 0px 10px 0px 30px;
+}
+
+.BackButton {
+    border: 1px solid lightgray;
+    background-color: lightgray;   
+    padding: 12px;
+    text-align: center;
+    text-decoration: inherit;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    font-size: 14px;
+}
+
+
 /*@media only screen and (max-width: 1050px) {
     body { 
         font-size: 1rem;

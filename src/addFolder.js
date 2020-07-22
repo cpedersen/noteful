@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink, Link } from 'react-router-dom'
 import NotesContext from './notesContext'
 import './addFolder.css'
 
@@ -41,29 +42,50 @@ class AddFolder extends Component {
 
     render() {
         return (
-            <form className="AddFolder" onSubmit={e => this.handleSubmit(e)}>
-                <h1>Create a folder</h1>
-                <label className="Label">
-                    Folder Name:{' '}
+            <div>
+                <div className="HeaderBox">
+                    <div className="Header_Sidebar">
+                        <div className="Section_BackButton">
+                            <NavLink className="BackButton"
+                                tag='button'
+                                role='link'
+                                to={'/'}>
+                                Back
+                            </NavLink>
+                        </div>
+                    </div>
+                    <div className="Header_Main">
+                        <h1 className="HeadingText">
+                        <Link className="Header_Link" to={'/'}>
+                            Noteful
+                        </Link></h1>
+                    </div>
+                </div>
+
+                <form className="AddFolder" onSubmit={e => this.handleSubmit(e)}>
+                    <h1>Create a folder</h1>
+                    <label className="Label">
+                        Folder Name:{' '}
+                        <input 
+                            type="text" 
+                            value={this.state.name}
+                            className="NameInput" 
+                            name="name" 
+                            id="name"  
+                            onChange={e => this.handleChange(e)}
+                        />
+                    </label>
+                        
                     <input 
-                        type="text" 
-                        value={this.state.name}
-                        className="NameInput" 
-                        name="name" 
-                        id="name"  
-                        onChange={e => this.handleChange(e)}
+                        type="submit" 
+                        value="Add Folder"
+                        className="SubmitButton_AddFolder"
+                        disabled={
+                            this.validateName()
+                        }
                     />
-                </label>
-                    
-                <input 
-                    type="submit" 
-                    value="Add Folder"
-                    className="SubmitButton_AddFolder"
-                    disabled={
-                        this.validateName()
-                    }
-                />
-            </form>
+                </form>
+            </div>
         );
     }
 }

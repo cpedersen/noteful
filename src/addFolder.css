@@ -7,6 +7,53 @@
     
 }
 
-.SubmitButton {
+.Label {
+    font-size: 17px;
+}
+
+.SubmitButton_AddFolder {
     margin: 20px;
+    font-size: 14px;
+    align-items: center;
+    border-radius: 20%;
+    padding: 5px;
+}
+
+
+@media only screen and (max-width: 1050px) {
+    body { 
+        font-size: 1rem;
+        line-height: 100%;
+    }
+    .SubmitButton_AddFolder {
+        font-size: 1rem;
+        line-height: 100%;
+    }
+    .Label {
+        font-size: 1rem;
+        line-height: 100%;
+    }
+    .AddFolder {
+        font-size: 1rem;
+        line-height: 100%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    body { 
+        font-size: .8rem;
+        line-height: 80%;
+    }
+    .SubmitButton_AddFolder {
+        font-size: .8rem;
+        line-height: 80%;
+    }
+    .Label {
+        font-size: .8rem;
+        line-height: 80%;
+    }
+    .AddFolder {
+        font-size: .8rem;
+        line-height: 80%;
+    }
 }

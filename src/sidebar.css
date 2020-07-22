@@ -51,10 +51,10 @@
     border: 1px solid lightgray;
     background-color: lightgray;   
     color: #2E0854;
-    padding: 12px;
+    padding: 5px;
     text-align: center;
     text-decoration: inherit;
-    border-radius: 50%;
+    border-radius: 20%;
     font-size: 14px;
 }
 
@@ -62,4 +62,55 @@
     color: #8B7B8B;
     text-decoration: underline;
     font-weight: bold;
+}
+
+
+@media only screen and (max-width: 1050px) {
+    body { 
+        font-size: 1rem;
+        line-height: 100%;
+    }
+    .Sidebar {
+        font-size: 1rem;
+        line-height: 100%;
+    }
+    .Folder {
+        font-size: 1rem;
+        line-height: 100%;
+        width: 40%;
+    }
+    .SelectedFolder {
+        font-size: 1rem;
+        line-height: 100%;
+        width: 40%;
+    }
+    .AddFolder_Button {
+        font-size: 1rem;
+        line-height: 100%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    body { 
+        font-size: .8rem;
+        line-height: 80%;
+    }
+    .Sidebar {
+        font-size: .8rem;
+        line-height: 80%;
+    }
+    .Folder {
+        font-size: .8rem;
+        line-height: 80%;
+        width: 40%;
+    }
+    .SelectedFolder {
+        font-size: .8rem;
+        line-height: 80%;
+        width: 40%;
+    }
+    .AddFolder_Button {
+        font-size: .8rem;
+        line-height: 80%;
+    }
 }

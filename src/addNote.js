@@ -81,7 +81,7 @@ class AddNote extends Component {
             >
                 <h1>Create a note</h1>
                 <section class="InputFields">
-                    <label>
+                    <label className="Label">
                         Note Name:{' '}
                         <input 
                             type="text" 
@@ -93,7 +93,7 @@ class AddNote extends Component {
                         />
                     </label>
 
-                    <label>
+                    <label className="Label">
                         Content:{' '}
                         <textarea
                             className="ContentInput" 
@@ -103,9 +103,9 @@ class AddNote extends Component {
                         />
                     </label>
 
-                    <label>
+                    <label className="Label">
                         Folder:{' '}
-                        <select 
+                        <select className="SelectFolder"
                             value={this.state.folderId} onChange={(e) => this.handleChangeOfFolder(e)}>
                             {notesContext.folders.map(folder => {
                                 return(
@@ -119,12 +119,12 @@ class AddNote extends Component {
                             })}
                         </select>
                     </label>
-                    
+
                 </section>
                 <input 
                     type="submit" 
-                    value="Submit"
-                    className="SubmitButton"
+                    value="Add Note"
+                    className="SubmitButton_AddNote"
                     disabled={
                         this.validateName()
                     }

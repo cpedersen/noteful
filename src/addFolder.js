@@ -43,7 +43,7 @@ class AddFolder extends Component {
         return (
             <form className="AddFolder" onSubmit={e => this.handleSubmit(e)}>
                 <h1>Create a folder</h1>
-                <label>
+                <label className="Label">
                     Folder Name:{' '}
                     <input 
                         type="text" 
@@ -57,8 +57,8 @@ class AddFolder extends Component {
                     
                 <input 
                     type="submit" 
-                    value="Submit"
-                    className="SubmitButton"
+                    value="Add Folder"
+                    className="SubmitButton_AddFolder"
                     disabled={
                         this.validateName()
                     }

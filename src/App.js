@@ -111,47 +111,51 @@ class App extends Component {
                 />
               </Switch>
             </section>
-            <section className="Section_Sidebar">
-                <Switch>
-                    <Route 
-                      exact path="/" 
-                      component={Sidebar}
-                    />
-                    <Route 
-                      path="/folder/:folder_id" 
-                      component={Sidebar}
-                    />
-                    <Route 
-                      path="/note/:note_id" 
-                      component={SidebarDetail}
-                    />
-                </Switch>
-            </section>
-            <section className="Section_Main">
-                <ErrorBoundary>
+            <section className="Section_SidebarMainEmpty">
+              <section className="Section_Sidebar">
                   <Switch>
-                    <Route 
-                      exact path="/" 
-                      component={Main}
+                      <Route 
+                        exact path="/" 
+                        component={Sidebar}
                       />
-                    <Route 
-                      path="/folder/:folder_id" 
-                      component={Main}
-                    />
-                    <Route 
-                      path="/note/:note_id" 
-                      component={MainDetail}
-                    />
-                    <Route 
-                      path="/add-folder" 
-                      component={AddFolder}
-                    />
-                    <Route 
-                      path="/add-note" 
-                      component={AddNote}
-                    />
+                      <Route 
+                        path="/folder/:folder_id" 
+                        component={Sidebar}
+                      />
+                      <Route 
+                        path="/note/:note_id" 
+                        component={SidebarDetail}
+                      />
                   </Switch>
-                </ErrorBoundary>
+              </section>
+              <section className="Section_Main">
+                  <ErrorBoundary>
+                    <Switch>
+                      <Route 
+                        exact path="/" 
+                        component={Main}
+                        />
+                      <Route 
+                        path="/folder/:folder_id" 
+                        component={Main}
+                      />
+                      <Route 
+                        path="/note/:note_id" 
+                        component={MainDetail}
+                      />
+                      <Route 
+                        path="/add-folder" 
+                        component={AddFolder}
+                      />
+                      <Route 
+                        path="/add-note" 
+                        component={AddNote}
+                      />
+                    </Switch>
+                  </ErrorBoundary>
+              </section>
+              <section className="Section_Empty">
+              </section>
             </section>
           </section>
         </section>

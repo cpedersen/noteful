@@ -11,24 +11,65 @@
     align-items: baseline;
 }
 
-.NameInput {
-    
-}
-
-.ContentInput {
-    
-}
-
-.folderInput {
-    
-}
-
 .Label {
-
+    font-size: 17px;
 }
 
-.SubmitButton {
+.SelectFolder {
+    font-size: 16px;
+}
+
+.SubmitButton_AddNote {
+    font-size: 14px;
     margin: 20px;
-    width: 15%;
     align-items: center;
+    border-radius: 20%;
+    padding: 5px;
+}
+
+
+@media only screen and (max-width: 1050px) {
+    body { 
+        font-size: 1rem;
+        line-height: 100%;
+    }
+    .AddNote {
+        font-size: 1rem;
+        line-height: 100%;
+    }
+    .Label {
+        font-size: 1rem;
+        line-height: 100%;
+    }
+    .SelectFolder {
+        font-size: 1rem;
+        line-height: 100%;
+    }
+    .SubmitButton_AddNote {
+        font-size: 1rem;
+        line-height: 100%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    body { 
+        font-size: .8rem;
+        line-height: 80%;
+    }
+    .AddNote {
+        font-size: .8rem;
+        line-height: 80%;
+    }
+    .Label {
+        font-size: .8rem;
+        line-height: 80%;
+    }
+    .SelectFolder {
+        font-size: .8rem;
+        line-height: 80%;
+    }
+    .SubmitButton_AddNote {
+        font-size: .8rem;
+        line-height: 80%;
+    }
 }

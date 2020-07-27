@@ -9,12 +9,13 @@ class Header extends Component {
         let notesContext = this.context
         let selectedNote = []
         selectedNote = notesContext.notes.filter(note => note.id === this.props.match.params.note_id)
+
         if (selectedNote.length === 0) {
             return( 
-                <div className="Header_HeaderBox">
+                <div className="HeaderBox">
                     <div className="Header_Sidebar"></div>
                     <div className="Header_Main">
-                        <h1 className="Header_HeadingText">
+                        <h1 className="HeadingText">
                         <Link className="Header_Link" to={'/'}>
                             Noteful
                         </Link></h1>
@@ -25,8 +26,8 @@ class Header extends Component {
             return( 
                 <div className="HeaderBox_WithNote">
                     <div className="Header_Sidebar_WithNote">
-                        <div className="Header_Section_BackButton">
-                            <NavLink className="Header_BackButton"
+                        <div className="Section_BackButton">
+                            <NavLink className="BackButton"
                                 tag='button'
                                 role='link'
                                 to={'/'}>
@@ -35,7 +36,7 @@ class Header extends Component {
                         </div>
                     </div>
                     <div className="Header_Main_WithNote">
-                        <h1 className="Header_HeadingText">
+                        <h1 className="HeadingText">
                         <Link className="Header_Link" to={'/'}>
                             Noteful
                         </Link></h1>

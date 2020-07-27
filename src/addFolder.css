@@ -7,24 +7,22 @@
     
 }
 
-.Label {
+.AddFolder_Label {
     font-size: 17px;
 }
 
-.SubmitButton_AddFolder {
+.AddFolder_SubmitButton {
     margin: 20px;
     font-size: 14px;
     align-items: center;
     border-radius: 20%;
 }
 
-
-
-.HeaderBox {
+.AddFolder_HeaderBox {
     /*border: 1px solid black;*/
     background-color: #8B7B8B;
     color: white;
-    margin: 0px 0 1.4rem 20%;
+    /*margin: 0px 0 1.4rem 20%;*/
     display: flex;
     flex-direction: row;
     flex: 1 1 auto;
@@ -39,15 +37,15 @@
     flex-direction: row;
 }*/
 
-.Header_Sidebar {
+.AddFolder_Header_Sidebar {
     /*flex: 1 1 auto;*/
     width: 18%;
     padding: 0px 0px;
 }
 
 .Header_Main {
-    margin: 0px 0px 0px 100px;
-    margin: 0px 20px;
+    /*margin: 0px 0px 0px 100px;
+    margin: 0px 20px;*/
 }
 
 .Header_Link {
@@ -60,13 +58,13 @@
     margin: 2px 2px 2px 2px;
 }
 
-h1 {
+.AddFolder_Title {
     font-size: 2rem;
     margin: 0 0 0.75rem 0;
     color: white;
 }
 
-.Section_BackButton {
+.AddFolder_Section_BackButton {
     background-color: #8B7B8B;
     color: black;
     height: 40px;
@@ -75,7 +73,7 @@ h1 {
     margin: 0px 10px 0px 30px;
 }
 
-.BackButton {
+.AddFolder_BackButton {
     border: 1px solid lightgray;
     background-color: lightgray;   
     padding: 12px;
@@ -87,38 +85,92 @@ h1 {
     font-size: 14px;
 }
 
+.AddFolder_HeadingText {
+    margin: 2px 2px 2px 2px;
+}
+
+.AddFolder_Header_Link {
+    color: white;
+}
 
 
+@media only screen and (max-width: 320px) {
+    .AddFolder_Section_BackButton {
+        height: 15vh;
+        padding: 10px 10px 0px 20px;
+        margin: 1rem;
+    }
 
-/*@media only screen and (max-width: 1050px) {
-    body { 
-        font-size: 1rem;
-        line-height: 100%;
+    .AddFolder_Title {
+        font-size: 1.2rem;
+        margin: 2rem 0 1rem 0;
+        color: white;
     }
-    .SubmitButton_AddFolder {
-        font-size: 1rem;
-        line-height: 100%;
+
+    .AddFolder_HeaderBox {
+        margin: 0rem;
+        display: block;
+        /*border: 1px solid black;*/
     }
-    .Label {
-        font-size: 1rem;
-        line-height: 100%;
-    }
+
     .AddFolder {
+        margin: 5vw 0vw 0vw 0vw;
+        line-height: 120%;
+    }
+    
+    .AddFolder_Label {
         font-size: 1rem;
         line-height: 100%;
+    }
+    
+    .AddFolder_SubmitButton {
+        margin: 20px;
+        font-size: 14px;
+    }
+        
+    .Header_Sidebar {
+        width: 18%;
+        padding: 0px 0px;
+    }
+    
+    .AddFolder_Header_Main {
+    }
+    
+    .AddFolder_Header_Link {
+        color: white;
+    }
+    
+    .AddFolder_HeadingText {
+        margin: 2px 2px 2px 2px;
+        font-size: 2rem;
+    }
+    
+    .Section_BackButton {
+        /*height: 40px;*/
+        padding: 10px 10px 0px 20px;
+        margin: 0px 10px 0px 30px;
+    }
+    
+    .BackButton {  
+        padding: 12px;
+        height: 20px;
+        width: 20px;
+        font-size: 14px;
     }
 }
 
-@media only screen and (max-width: 950px) {
+
+
+/*@media only screen and (max-width: 950px) {
     body { 
         font-size: .8rem;
         line-height: 80%;
     }
-    .SubmitButton_AddFolder {
+    .AddFolder_SubmitButton {
         font-size: .8rem;
         line-height: 80%;
     }
-    .Label {
+    .AddFolder_Label {
         font-size: .8rem;
         line-height: 80%;
     }

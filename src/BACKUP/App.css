@@ -2,8 +2,7 @@ body {
 }
 
 .App {
-    /*margin: 25px 25px 25px 25px;*/
-    margin: 3vw;
+    margin: 25px 25px 25px 25px;
     background-color:  #8B7B8B;
 }
 
@@ -13,7 +12,7 @@ body {
 /* 3. Use display: block */
 
 .Section_All {
-    width: 100vw;
+    width: 100%;
     margin: auto;
     max-width: 1200px;
 }
@@ -29,14 +28,18 @@ body {
 
 .Section_Sidebar {
     color: white;
-    margin: 0rem 1rem 1rem 1rem;
+    padding: 0px 10px 0px 0px;
+    margin: 0px;
 }
 
 .Section_Main {
     color: white;
     float: left;
-    padding: 0rem 0rem 0rem 3rem;
-    margin: 0rem;
+    padding: 0px 0px 0px 51px;
+    margin: 0px;
+}
+
+.Section_Empty {
 }
 
 body { 
@@ -49,8 +52,11 @@ body {
 }
 
 
-
 @media only screen and (max-width: 320px) {
+    /*body { 
+        font-size: 1rem;
+        line-height: 100%;
+    }*/
     .Section_SidebarMain {
         width: 100vw;
         height: 100vh;
@@ -59,17 +65,17 @@ body {
     .Section_Sidebar {
         font-size: 1rem;
         line-height: 100%;
-        /*width: 22vw;*/
+        width: 30vw;
         height: 100vh;
         float: left;
+        /*display: inline-block;*/
     }
-
     .Section_Main {
         font-size: 1rem;
         line-height: 100%;
         width: 30vw;
         height: 100vh;
-        padding: 0rem 0rem 0rem 3rem;
+        /*display: inline-block;*/
     }
 }
 

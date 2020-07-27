@@ -43,10 +43,10 @@ class AddFolder extends Component {
     render() {
         return (
             <div>
-                <div className="AddFolder_HeaderBox">
-                    <div className="AddFolder_Header_Sidebar">
-                        <div className="AddFolder_Section_BackButton">
-                            <NavLink className="AddFolder_BackButton"
+                <div className="HeaderBox">
+                    <div className="Header_Sidebar">
+                        <div className="Section_BackButton">
+                            <NavLink className="BackButton"
                                 tag='button'
                                 role='link'
                                 to={'/'}>
@@ -55,18 +55,18 @@ class AddFolder extends Component {
                         </div>
                     </div>
                     <div className="Header_Main">
-                        <h1 className="AddFolder_HeadingText">
-                        <Link className="AddFolder_Header_Link" to={'/'}>
+                        <h1 className="HeadingText">
+                        <Link className="Header_Link" to={'/'}>
                             Noteful
                         </Link></h1>
                     </div>
                 </div>
 
                 <form className="AddFolder" onSubmit={e => this.handleSubmit(e)}>
-                    <h1 class="AddFolder_Title">Create a folder</h1>
-                    <label htmlFor="enterFolderName" className="AddFolder_Label">
+                    <h1>Create a folder</h1>
+                    <label htmlFor="enterFolderName" className="Label">
                         Folder Name:{' '}
-                        <input s
+                        <input 
                             type="text" 
                             value={this.state.name}
                             className="NameInput" 
@@ -82,7 +82,7 @@ class AddFolder extends Component {
                     <input 
                         type="submit" 
                         value="Add Folder"
-                        className="AddFolder_SubmitButton"
+                        className="SubmitButton_AddFolder"
                         disabled={
                             this.validateName()
                         }

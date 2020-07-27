@@ -77,10 +77,10 @@ class AddNote extends Component {
         let notesContext = this.context
         return (
             <div>
-                <div className="AddNote_HeaderBox">
-                    <div className="AddNote_Header_Sidebar">
-                        <div className="AddNote_Section_BackButton">
-                            <NavLink className="AddNote_BackButton"
+                <div className="HeaderBox">
+                    <div className="Header_Sidebar">
+                        <div className="Section_BackButton">
+                            <NavLink className="BackButton"
                                 tag='button'
                                 role='link'
                                 to={'/'}>
@@ -88,9 +88,9 @@ class AddNote extends Component {
                             </NavLink>
                         </div>
                     </div>
-                    <div className="AddNote_Header_Main">
-                        <h1 className="AddNote_HeadingText">
-                        <Link className="AddNote_Header_Link" to={'/'}>
+                    <div className="Header_Main">
+                        <h1 className="HeadingText">
+                        <Link className="Header_Link" to={'/'}>
                             Noteful
                         </Link></h1>
                     </div>
@@ -100,7 +100,7 @@ class AddNote extends Component {
                     className="AddNote" 
                     onSubmit={e => this.handleSubmit(e)}
                 >
-                    <h1 className="NoteTitle">Create a note</h1>
+                    <h1 >Create a note</h1>
                     <section className="InputFields">
                         <label htmlFor="enterNoteName" className="Label">
                             Note Name:{' '}
@@ -129,7 +129,7 @@ class AddNote extends Component {
                             />
                         </label>
 
-                        <label htmlFor="selectFolder" className="AddNote_Label">
+                        <label htmlFor="selectFolder" className="Label">
                             Folder:{' '}
                             <select className="SelectFolder"
                                 value={this.state.folderId} onChange={(e) => this.handleChangeOfFolder(e)}>
@@ -152,7 +152,7 @@ class AddNote extends Component {
                     <input 
                         type="submit" 
                         value="Add Note"
-                        className="AddNote_SubmitButton"
+                        className="SubmitButton_AddNote"
                         disabled={
                             this.validateName()
                         }

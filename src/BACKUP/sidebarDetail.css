@@ -1,0 +1,42 @@
+.SidebarDetail {
+    background-color: #8B7B8B;
+    padding: auto;
+}
+
+.FolderName {
+    background-color: #8B7B8B;
+    color: white;
+    float: left;
+    width: 11%;
+    align-content: space-around;
+    padding: 10px 0px 0px 0px;
+    margin: 2px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-align: center;
+    flex-wrap: nowrap;
+    font-size: 45px;
+}
+
+
+/*@media only screen and (max-width: 1050px) {
+    body { 
+        font-size: 1rem;
+        line-height: 100%;
+    }
+    .FolderName {
+        font-size: 1rem;
+        line-height: 100%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    body { 
+        font-size: .8rem;
+        line-height: 80%;
+    }
+    .FolderName {
+        font-size: .8rem;
+        line-height: 80%;
+    }
+}*/

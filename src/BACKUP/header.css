@@ -1,14 +1,11 @@
-.Header_HeaderBox {
+.HeaderBox {
     /*border: 1px solid black;*/
     background-color: #8B7B8B;
     color: white;
-    /*margin: 0px 0 1.4rem 20%;*/
-    /*margin: 0rem 0rem 1.4rem 5rem;*/
+    margin: 0px 0 1.4rem 20%;
     display: flex;
     flex-direction: row;
     flex: 1 1 auto;
-   /*margin: 0rem 0rem 1.4rem 5rem;*/
-    margin: 5% 0% 5% 30%;
 }
 
 .HeaderBox_WithNote {
@@ -22,8 +19,7 @@
 
 .Header_Sidebar {
     /*flex: 1 1 auto;*/
-    /*width: 18%;*/
-    /*border: 1px solid black;*/
+    width: 18%;
 }
 
 .Header_Sidebar_WithNote {
@@ -35,7 +31,6 @@
 .Header_Main {
     /*flex: 1 1 auto;*/
     /*width: 75%;*/
-    /*border: 1px solid black;*/
 }
 
 .Header_Main_WithNote {
@@ -47,22 +42,28 @@
     color: white;
 }
 
-.Header_HeadingText {
+.HeadingText {
     color: white;
     text-align: left;
     margin: 2px 2px 2px 2px;
+}
+
+h1 {
     font-size: 2rem;
     margin: 0 0 0.75rem 0;
     color: white;
 }
 
-.Header_Section_BackButton {
+.Section_BackButton {
     background-color: #8B7B8B;
     color: black;
     height: 40px;
+    /*width: 75px;*/
+    padding: 10px 10px 0px 20px;
+    margin: 0px 10px 0px 30px;
 }
 
-.Header_BackButton {
+.BackButton {
     border: 1px solid lightgray;
     background-color: lightgray;   
     padding: 12px;
@@ -72,20 +73,4 @@
     height: 20px;
     width: 20px;
     font-size: 14px;
-}
-
-
-
-
-@media only screen and (max-width: 320px) {
-    .Header_HeaderBox {
-        /*margin: 2rem 9.5rem 1rem 0;*/
-        margin: 5% 10% 5% 10%;
-
-    }
-
-    .Header_Main {
-        margin: 0rem 0rem 0rem 0rem;
-    }
-    
 }

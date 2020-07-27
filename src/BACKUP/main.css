@@ -3,7 +3,7 @@
     color: white;
     float: left;
     text-align: left;
-    width: 45vw;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-content: space-around;
@@ -14,10 +14,9 @@
 .Note {
     background-color:#696969;
     color: white;
-    margin: 0rem 2rem 1rem 4rem;
-    padding: 0.5rem 1rem 3rem 0.5rem;
-    width: 50vw;
-    height: 7.5rem;
+    margin: 0px 15px 15px 15px;
+    padding: 0px 6px 6px 6px;
+    width: 350px;
     position: relative;
 }
 
@@ -41,7 +40,7 @@
 
 .AddNote_Button_Section {
     text-align: center;
-    margin: 1rem 0rem 0rem 2rem;
+    margin: 20px auto;
 }
 
 .AddNote_Button {
@@ -69,49 +68,32 @@
 }
 
 
-
-
-
-
-@media only screen and (max-width: 320px) {
+/*@media only screen and (max-width: 1050px) {
+    body { 
+        font-size: 1rem;
+        line-height: 100%;
+    }
     .Main {
-        width: 8vw;
+        font-size: 1rem;
+        line-height: 100%;
     }
-    
     .Note {
-        margin: 0rem 0.5rem 1rem 8rem;
-        padding: 0.5rem 0.5rem 0.5rem 0.4rem;
-        width: 50vw;
-        height: 5.2rem;
-        font-size: .6rem;
+        font-size: 1rem;
+        line-height: 80%;
+        width: 250px;
+        margin: 0px 0px 10px 0px;
     }
-    
-    .Note_Section2_Date {
-        font-size: 12px;
-        margin: 0px;
-    }
-
-    .AddNote_Button_Section {
-        margin: 1rem 0rem 0rem 6rem;
-        padding: 0.5rem 1rem 0.5rem 1rem;
-    }
-    
     .AddNote_Button {
-        padding: 5px;
-        text-align: center;
-        margin: 20px auto;
-        white-space: nowrap;
-        font-size: .9rem;
+        font-size: 1rem;
+        line-height: 100%;
     }
-    
     .Note_Name {
-        font-size: .9rem;
-        margin: 2px 2px 16px 2px;
+        font-size: 1rem;
+        line-height: 100%;
     }
 }
 
-
-/*@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 950px) {
     body { 
         font-size: .8rem;
         line-height: 80%;

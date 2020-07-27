@@ -11,7 +11,7 @@
     align-items: baseline;
 }
 
-.AddNote_Label {
+.Label {
     font-size: 17px;
 }
 
@@ -19,13 +19,15 @@
     font-size: 16px;
 }
 
-.AddNote_SubmitButton {
+.SubmitButton_AddNote {
     font-size: 14px;
     margin: 20px;
     align-items: center;
     border-radius: 20%;
     padding: 5px;
 }
+
+
 
 /*.HeaderBox {
     background-color: #8B7B8B;
@@ -36,43 +38,43 @@
     flex: 1 1 auto;
 }*/
 
-.AddNote_HeaderBox {
+.HeaderBox {
     background-color: #8B7B8B;
     color: white;
-    /*width: 100%;*/
+    width: 100%;
     margin: 2rem 0 1rem 0;
     display: flex;
     flex-direction: row;
 }
 
-.AddNote_Header_Sidebar {
+.Header_Sidebar {
+
     width: 18%;
     padding: 0px 0px;
 }
 
-.AddNote_Header_Main {
-    /*margin: 0px 0px 0px 100px;*/
-    margin: 0rem 0rem 0rem 2rem;
+.Header_Main {
+    margin: 0px 0px 0px 100px;
     /*border: 1px solid black;*/
 }
 
-.AddNote_Header_Link {
+.Header_Link {
     color: white;
 }
 
-.AddNote_HeadingText {
+.HeadingText {
     color: white;
     text-align: left;
     margin: 2px 2px 2px 2px;
 }
 
-.NoteTitle {
+h1 {
     font-size: 2rem;
     margin: 0 0 0.75rem 0;
     color: white;
 }
 
-.AddNote_Section_BackButton {
+.Section_BackButton {
     background-color: #8B7B8B;
     color: black;
     height: 40px;
@@ -81,7 +83,7 @@
     margin: 0px 10px 0px 30px;
 }
 
-.AddNote_BackButton {
+.BackButton {
     border: 1px solid lightgray;
     background-color: lightgray;   
     padding: 12px;
@@ -93,80 +95,31 @@
     font-size: 14px;
 }
 
-.AddNote_HeadingText {
-    margin: 2px 2px 2px 2px;
-    font-size: 2rem;
-}
 
-
-
-
-@media only screen and (max-width: 320px) {
-    .AddNote_Label {
+/*@media only screen and (max-width: 1050px) {
+    body { 
         font-size: 1rem;
         line-height: 100%;
     }
-
-    .AddNote_SubmitButton {
-        font-size: 1rem;
-        line-height: 100%;
-    }
-
-    .AddNote_Section_BackButton {
-        height: 15vh;
-        padding: 1rem 1rem 1rem 1rem;
-        margin: 0rem;
-    }
-
-    .AddNote_Title {
-        font-size: 1.5rem;
-        margin: 2rem 0 1rem 0;
-        color: white;
-    }
-
-    .AddNote_HeaderBox {
-        margin: 5rem 0rem 0rem 043m;
-        display: block;
-        /*border: 1px solid black;*/
-    }
-
     .AddNote {
-        margin: 15vw;
+        font-size: 1rem;
+        line-height: 100%;
     }
-
-    .AddNote_Header_Sidebar {
-        width: 0%;
+    .Label {
+        font-size: 1rem;
+        line-height: 100%;
     }
-
-    .AddNote_Header_Main {
-        margin: 0rem 0rem 0rem 0rem;
+    .SelectFolder {
+        font-size: 1rem;
+        line-height: 100%;
     }
-
-    .NoteTitle {
-        font-size: 1.2rem;
-        margin: 0 0 0.75rem 0;
-    }
-
-    .InputFields {
-        margin: 1rem;
-    }
-
-    .NameInput {
-        margin: 0rem 0rem 1rem 0rem;
-    }
-
-    .ContentInput {
-        margin: 0rem 0rem 1rem 0rem;
-    }
-
-    .AddNote_HeadingText {
-        margin: 2px 2px 2px 2px;
-        font-size: 2rem;
+    .SubmitButton_AddNote {
+        font-size: 1rem;
+        line-height: 100%;
     }
 }
 
-
-/*@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 950px) {
     body { 
         font-size: .8rem;
         line-height: 80%;
@@ -175,7 +128,7 @@
         font-size: .8rem;
         line-height: 80%;
     }
-    .AddNote_Label {
+    .Label {
         font-size: .8rem;
         line-height: 80%;
     }
@@ -183,7 +136,7 @@
         font-size: .8rem;
         line-height: 80%;
     }
-    .AddNote_SubmitButton {
+    .SubmitButton_AddNote {
         font-size: .8rem;
         line-height: 80%;
     }

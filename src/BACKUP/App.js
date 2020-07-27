@@ -126,7 +126,7 @@ class App extends Component {
                         exact path="/" 
                         component={Sidebar}
                       />
-                      <Route className="Section_Sidebar_Mobile"
+                      <Route 
                         path="/folder/:folder_id" 
                         component={Sidebar}
                       />
@@ -161,6 +161,8 @@ class App extends Component {
                       />
                     </Switch>
                   </ErrorBoundary>
+              </section>
+              <section className="Section_Empty">
               </section>
             </section>
           </section>

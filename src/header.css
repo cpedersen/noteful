@@ -1,14 +1,12 @@
+/* These settings are for mobile devices greater than 320 width */
 .Header_HeaderBox {
     /*border: 1px solid black;*/
     background-color: #8B7B8B;
     color: white;
-    /*margin: 0px 0 1.4rem 20%;*/
-    /*margin: 0rem 0rem 1.4rem 5rem;*/
-    display: flex;
+    /*display: flex;
     flex-direction: row;
-    flex: 1 1 auto;
-   /*margin: 0rem 0rem 1.4rem 5rem;*/
-    margin: 5% 0% 5% 30%;
+    flex: 1 1 auto;*/
+    margin: 1rem 5% 1rem 30%;
 }
 
 .HeaderBox_WithNote {
@@ -33,9 +31,8 @@
 }
 
 .Header_Main {
-    /*flex: 1 1 auto;*/
-    /*width: 75%;*/
-    /*border: 1px solid black;*/
+    margin: 0rem 0rem 2rem 0rem;
+    font-size: 2.5rem;
 }
 
 .Header_Main_WithNote {
@@ -76,11 +73,9 @@
 
 
 
-
+/* These settings are for the smallest screens */
 @media only screen and (max-width: 320px) {
     .Header_HeaderBox {
-        /*margin: 2rem 9.5rem 1rem 0;*/
-        margin: 5% 10% 5% 10%;
 
     }
 
@@ -89,3 +84,9 @@
     }
     
 }
+
+
+/* These settings are for larger screens */
+/*@media only screen and (min-width: 750px) {
+
+} */

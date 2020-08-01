@@ -1,3 +1,4 @@
+/* These settings are for mobile devices greater than 320 width */
 .Sidebar {
     background-color:  #8B7B8B;
     color: white;
@@ -12,7 +13,7 @@
 
 .Folder {
     background-color: #573976;
-    margin: 0rem 1rem 1rem .5rem;
+    margin: 0rem 1rem 1rem 3rem;
     padding: 1rem 2.5rem 1rem 1rem;
     width: 7rem;
     text-align: center;
@@ -21,7 +22,7 @@
 
 .SelectedFolder {
     background-color: #2E0854; 
-    margin: 0rem 1rem 1rem .5rem;
+    margin: 0rem 1rem 1rem 3rem;
     padding: 1rem 2.5rem 1rem 1rem;
     width: 7rem;
 }
@@ -42,6 +43,7 @@
     background-color: lightgray;   
     color: #2E0854;
     padding: 5px;
+    margin: 0rem 0rem 0rem 1.5rem;
     text-align: center;
     text-decoration: inherit;
     border-radius: 20%;
@@ -60,14 +62,50 @@
 
 
 
+/* These settings are for the smallest screens */
 @media only screen and (max-width: 320px) {
     .Sidebar {
         width: 6vw;
     }
     
     .Folder {
-        margin: 0rem 1.4rem 1rem 3rem;
-        /*padding: 0.7rem;*/
+        margin: 0rem 1.4rem 1rem 4.5rem;
+        padding: 1rem 1rem 1rem .5rem;
+        width: 5.2rem;
+        font-size: .9rem;
+        text-align: center;
+    }
+    
+    .SelectedFolder {
+        margin: 0rem 1.4rem 1rem 4.5rem;
+        padding: 1rem 1rem 1rem .5rem;
+        width: 5.2rem;
+    }
+    
+    .AddFolder_Section {
+        width: 5.7rem;
+        margin: 1rem 1rem 1rem 4rem;
+    }
+    
+    .AddFolder_Button {
+        padding: .4rem;
+        font-size: .9rem;
+        margin: 0rem;
+    }
+
+    .Folder_Link {
+        padding: 0rem;
+    }
+}
+
+/* These settings are for larger screens */
+/*@media only screen and (min-width: 750px) {
+    .Sidebar {
+        width: 6vw;
+    }
+    
+    .Folder {
+        margin: 0rem 1.4rem 1rem 4.5rem;
         width: 5.2rem;
         font-size: .9rem;
         text-align: left;
@@ -81,36 +119,16 @@
     
     .AddFolder_Section {
         width: 5.7rem;
-        margin: 1rem 1rem 1rem 2.5rem;
+        margin: 1rem 1rem 1rem 4rem;
     }
     
     .AddFolder_Button {
-        padding: 3px;
+        padding: .4rem;
         font-size: .9rem;
-    }
-}
 
-/*@media only screen and (max-width: 320px) {
-    body { 
-        font-size: .8rem;
-        line-height: 80%;
     }
-    .Sidebar {
-        font-size: .8rem;
-        line-height: 80%;
-    }
-    .Folder {
-        font-size: .8rem;
-        line-height: 80%;
-        width: 40%;
-    }
-    .SelectedFolder {
-        font-size: .8rem;
-        line-height: 80%;
-        width: 40%;
-    }
-    .AddFolder_Button {
-        font-size: .8rem;
-        line-height: 80%;
+
+    .Folder_Link {
+        padding: 0rem;
     }
 }*/

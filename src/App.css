@@ -1,3 +1,4 @@
+/* These settings are for mobile devices greater than 320 width */
 body {
 }
 
@@ -22,7 +23,6 @@ body {
 
 }
 
-
 .Section_SidebarMain {
     /*display: flex;*/
 }
@@ -34,9 +34,15 @@ body {
 
 .Section_Main {
     color: white;
-    float: left;
+    /*float: left;*/
+    /*margin: 0rem;*/
+
+    font-size: 1rem;
+    /*line-height: 100%;*/
+    width: 30vw;
+    height: 100vh;
     padding: 0rem 0rem 0rem 3rem;
-    margin: 0rem;
+    margin: 0rem 0rem 0rem 4rem;
 }
 
 body { 
@@ -49,7 +55,7 @@ body {
 }
 
 
-
+/* These settings are for the smallest screens */
 @media only screen and (max-width: 320px) {
     .Section_SidebarMain {
         width: 100vw;
@@ -70,12 +76,14 @@ body {
         width: 30vw;
         height: 100vh;
         padding: 0rem 0rem 0rem 3rem;
+        margin: 0rem 0rem 0rem 4rem;
     }
 }
 
 /*
 
-@media only screen and (max-width: 950px) {
+/* These settings are for larger screens */
+/*@media only screen and (min-width: 750px) {
     body { 
         font-size: .8rem;
         line-height: 80%;

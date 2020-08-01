@@ -3,15 +3,15 @@
     float: left;
     width: 80%;
     margin-top: 15px;
-    display: flex;
-    flex-direction: column; 
+    /*display: flex;
+    flex-direction: column; */
     align-content: space-around;
     height: 500px;
     padding: 0px;
     margin: 6px;
-    display: flex;
+    /*display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap;*/
     text-align: left;
 }
 
@@ -61,13 +61,12 @@
 }
 
 .NoteBox {
-    /*width: 80%;*/
-    /*height: 500px;
-    width: 400px;*/
+    width: 85%;
     color: black;
     background-color: white;
     font-size: 1rem;
-    text-indent: 12px;
+    text-indent: 0rem;
+    margin: -0rem -4rem -4rem -4rem;
 }
 
 .NoteText {
@@ -80,6 +79,12 @@
         width: 500%;
     }
 
+    .NoteText {
+        margin: 0rem .7rem .7rem 0rem;
+        padding: .7rem;
+        font-size: .8rem;
+    }
+
     .MainDetail {
         margin-top: 1rem;
         width: 12vw;
@@ -87,6 +92,7 @@
 
     .MainDetail_Header {
         width: 500%;
+        margin: 0rem 0rem 0rem -3.9rem;
     }
 
     .DeleteButton {
@@ -96,5 +102,10 @@
         padding: 4px;
         font-size: 17px;
         text-decoration: inherit;
+    }
+
+    .Header_Section1 {
+        /*margin: -0rem -4rem -4rem -4rem;*/
+
     }
 }

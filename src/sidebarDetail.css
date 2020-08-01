@@ -7,15 +7,15 @@
     background-color: #8B7B8B;
     color: white;
     float: left;
-    width: 11%;
+    width: 5%;
     align-content: space-around;
-    padding: 10px 0px 0px 0px;
+    padding: 1rem 0rem 0rem 0rem;
     margin: 2px;
     writing-mode: vertical-rl;
     text-orientation: upright;
     text-align: center;
     flex-wrap: nowrap;
-    font-size: 45px;
+    font-size: 2.5rem;
 }
 
 

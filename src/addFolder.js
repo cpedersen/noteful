@@ -63,10 +63,10 @@ class AddFolder extends Component {
                 </div>
 
                 <form className="AddFolder" onSubmit={e => this.handleSubmit(e)}>
-                    <h1 class="AddFolder_Title">Create a folder</h1>
+                    <h1 className="AddFolder_Title">Create a folder</h1>
                     <label htmlFor="enterFolderName" className="AddFolder_Label">
                         Folder Name:{' '}
-                        <input s
+                        <input 
                             type="text" 
                             value={this.state.name}
                             className="NameInput" 

@@ -14,7 +14,7 @@ body {
 /* 3. Use display: block */
 
 .Section_All {
-    width: 100vw;
+    /*width: 100vw;*/
     margin: auto;
     max-width: 1200px;
 }
@@ -24,25 +24,24 @@ body {
 }
 
 .Section_SidebarMain {
-    /*display: flex;*/
+    display: flex;
 }
 
 .Section_Sidebar {
     color: white;
-    margin: 0rem 1rem 1rem 1rem;
+    /*margin: 0rem 1rem 1rem 1rem;*/
 }
 
 .Section_Main {
     color: white;
     /*float: left;*/
     /*margin: 0rem;*/
-
     font-size: 1rem;
     /*line-height: 100%;*/
     width: 30vw;
     height: 100vh;
-    padding: 0rem 0rem 0rem 3rem;
-    margin: 0rem 0rem 0rem 4rem;
+    /*padding: 0rem 0rem 0rem 3rem;*/
+    /*margin: 0rem 0rem 0rem 4rem;*/
 }
 
 body { 

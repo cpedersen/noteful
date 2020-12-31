@@ -136,7 +136,7 @@ class AddNote extends Component {
                                 {notesContext.folders.map(folder => {
                                     return(
                                         <option 
-                                            aria-required="false" 
+                                            //aria-required="false" 
                                             aria-labelledby="selectFolder"
                                             value={folder.id} 
                                             name={folder.name} 

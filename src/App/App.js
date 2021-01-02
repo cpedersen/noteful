@@ -1,16 +1,25 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Header from './header.js'
-import Main from './main.js'
-import MainDetail from './mainDetail.js'
-import Sidebar from './sidebar.js'
-import SidebarDetail from './sidebarDetail.js'
-import NotesContext from './notesContext'
-import config from './config'
-import AddFolder from './addFolder'
-import AddNote from './addNote'
-import ErrorBoundary from './errorBoundary'
+import Header from '../Header/header.js'
+import Main from '../Main/main.js'
+import MainDetail from '../MainDetail/mainDetail.js'
+import Sidebar from '../Sidebar/sidebar.js'
+import SidebarDetail from '../SidebarDetail/sidebarDetail.js'
+import NotesContext from '../notesContext'
+import config from '../config'
+import AddFolder from '../AddFolder/addFolder'
+import AddNote from '../AddNote/addNote'
+/*import AddFolder from './addFolder'
+import AddNote from './addNote'*/
+import ErrorBoundary from '../errorBoundary'
 import './App.css'
+/*require('dotenv').config()*/
+
+/*const foldersRouter = require('./folders/folders-router')
+const notesRouter = require('./notes/notes-router')*/
+/*const uuidv4 = require("uuid/v4")*/
+/*const express = require('express')
+const app = express()*/
 
 class App extends Component {
   state = {

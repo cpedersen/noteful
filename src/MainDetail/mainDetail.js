@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { format, parseISO } from 'date-fns'
-import NotesContext from './notesContext'
+import NotesContext from '../notesContext'
 import { withRouter } from 'react-router-dom'
 import './mainDetail.css';
 

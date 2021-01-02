@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import NotesContext from './notesContext'
+import NotesContext from '../notesContext'
 import './addFolder.css'
 
 class AddFolder extends Component {

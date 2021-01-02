@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import NotesContext from './notesContext'
+import NotesContext from '../notesContext'
 import { Link, NavLink } from 'react-router-dom';
 import './header.css';
 

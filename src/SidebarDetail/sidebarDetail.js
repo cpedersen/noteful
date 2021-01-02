@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
-import NotesContext from './notesContext'
+import NotesContext from '../notesContext'
 import './sidebarDetail.css';
 
 class SidebarDetail extends Component {

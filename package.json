@@ -9,14 +9,25 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "angular-font-awesome": "^3.1.2",
+    "cors": "^2.8.5",
     "date-fns": "^2.15.0",
+    "debug": "^4.3.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
+    "helmet": "^4.0.0",
+    "knex": "^0.21.9",
+    "migrate": "^1.7.0",
     "moment": "^2.26.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "uuid": "^8.3.2",
+    "xss": "^1.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,8 +36,11 @@
     "eject": "react-scripts eject",
     "serve": "serve -s build",
     "preserve": "npm run build",
-    "migate": "postgrator --config postgrator-config.js",
-    "migrate:test": "env NODE_ENV=test npm run migrate"
+    "migrate": "postgrator --config postgrator-config.js",
+    "migrate:test": "env NODE_ENV=test npm run migrate",
+    "migrate:production": "heroku run npm run migrate",
+    "deploy": "git push heroku main",
+    "postdeploy": "npm run migrate:production"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,6 +58,7 @@
     ]
   },
   "devDependencies": {
+    "postgrator-cli": "^3.2.0",
     "serve": "^11.3.2"
   }
 }

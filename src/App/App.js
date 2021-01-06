@@ -28,7 +28,7 @@ class App extends Component {
     })
   }
 
-  //YOUAREHERE - this is failing with "Unexpected end of JSON input"
+  //Keeping debug commented out below for future reference.
   deleteNote = note_id => {
     let requestOptions = {
       method: 'DELETE',
@@ -38,12 +38,15 @@ class App extends Component {
     }
     console.log("fetch: " + config.API_ENDPOINT + "/api/notes/" + note_id)
     fetch(config.API_ENDPOINT + "/api/notes/" + note_id, requestOptions)
-      .then(response => response.json())
+      .then(response => response.text())
+      //.then(console.log)
+      //.then(response => response.json())
       .then(result => {
+        console.log(result)
         const newNotes = this.state.notes.filter(note => note.id !== note_id)
         this.setState({
           notes: newNotes
-        })
+          })
       })
   }
 

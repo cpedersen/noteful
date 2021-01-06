@@ -11,21 +11,22 @@ class Main extends Component {
         let notesContext = this.context
         let notes
         if (this.props.match.params.folder_id) {
-            notes = notesContext.notes.filter(note => note.folderId === this.props.match.params.folder_id)
+            notes = notesContext.notes.filter(note => note.folder_id == this.props.match.params.folder_id )
         } else {
             notes = notesContext.notes
         }
+        
         return (
             <section className="Main">
                 {notes.map(note => {
                     return(
                         <section key={note.id} className="Note">
                             <div className="Note_Section1">
-                                <h2 className="Note_Name"><Link className="Note_Link" to={'/note/' + note.id}>{note.name}</Link></h2>
+                                <h2 className="Note_Name"><Link className="Note_Link" to={'/api/note/' + note.id}>{note.title}</Link></h2>
                             </div>
                             <div className="Note_Section2">
                                 <div className="Note_Section2_Date">
-                                    Modified {' '} {format(parseISO(note.modified), 'MM/dd/yyyy')} 
+                                    Modified {' '} {format(parseISO(note.date_modified), 'MM/dd/yyyy')} 
                                 </div>
                                 <div className="Note_Section2_Button">
                                     <button 
@@ -40,7 +41,7 @@ class Main extends Component {
                     <NavLink 
                         className="AddNote_Button"
                         tag={Link}
-                        to={'/add-note'}
+                        to={'/api/add-note'}
                         type='button'
                     >
                     Add Note 

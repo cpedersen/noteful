@@ -13,9 +13,9 @@ class MainDetail extends Component {
             <section className="MainDetail">
                 <div className="MainDetail_Header">
                     <div className="Header_Section1">
-                        <div className="NoteTitle">{selectedNote[0].name}</div>
+                        <div className="NoteTitle">{selectedNote[0].title}</div>
                         <div className="Date">
-                            Modified {' '} {format(parseISO(selectedNote[0].modified), 'MM/dd/yyyy')} 
+                            Modified {' '} {format(parseISO(selectedNote[0].date_modified), 'MM/dd/yyyy')} 
                         </div>
                     </div>
                     <div className="Header_Section2">

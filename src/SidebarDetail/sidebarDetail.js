@@ -10,11 +10,11 @@ class SidebarDetail extends Component {
         let note = notesContext.notes.filter(note => note.id === this.props.match.params.note_id)
         return (
             notesContext.folders.map(folder => {
-                if (folder.id === note[0].folderId) {
+                if (folder.id === note[0].folder_id) {
                     return(
                         <div key={folder.id} className="SidebarDetail">
                             <div className="FolderName">
-                                {folder.name}
+                                {folder.title}
                             </div>
                         </div>
                     )

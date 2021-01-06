@@ -2,19 +2,19 @@ import React, { Component } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import NotesContext from '../notesContext'
 import './addFolder.css'
+import config from '../config'
 
 class AddFolder extends Component {
     static contextType = NotesContext
     constructor(props) {
         super(props);
-        this.state = {name: ''}
+        this.state = {title: ''}
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        //console.log("event: " + event.target.value)
-        this.setState({name: event.target.value});
+        this.setState({title: event.target.value});
     }
 
     handleSubmit(event) {
@@ -24,20 +24,20 @@ class AddFolder extends Component {
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({"name":this.state.name})
+          body: JSON.stringify({"title": this.state.title})
         };
-        fetch("http://localhost:9090/folders/", requestOptions)
+        fetch(config.API_ENDPOINT + "/api/folders", requestOptions)
           .then(response => response.json())
           .then(result => {
               console.log(result);
-              this.context.addFolder(result.name, result.id);
+              this.context.addFolder(result.title, result.id);
               this.props.history.push("/");
             })
           .catch(error => console.log('error', error));
     }
 
     validateName() {
-        return this.context.validateName(this.state.name)
+        return this.context.validateName(this.state.title)
     }
 
     render() {
@@ -68,9 +68,9 @@ class AddFolder extends Component {
                         Folder Name:{' '}
                         <input 
                             type="text" 
-                            value={this.state.name}
+                            value={this.state.title}
                             className="NameInput" 
-                            name="name" 
+                            title="name" 
                             id="name"  
                             aria-required="true" 
                             aria-labelledby="enterFolderName"

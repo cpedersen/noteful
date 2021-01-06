@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import NotesContext from '../notesContext'
+import config from '../config'
 import './addNote.css'
 
 class AddNote extends Component {
@@ -8,26 +9,27 @@ class AddNote extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
+            title: '',
             id: '',
-            folderId: '',
+            folder_id: '',
             content: "",
             value: '',
         }
         this.handleChangeOfNote = this.handleChangeOfNote.bind(this);
         this.handleChangeOfFolder = this.handleChangeOfFolder.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        //this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     handleChangeOfNote(event) {
         this.setState(
-            {[event.target.name]: event.target.value}
+            {[event.target.title]: event.target.value}
         );
     }
 
     handleChangeOfFolder(event) {
         this.setState(
-            {folderId: event.target.value}
+            {folder_id: event.target.value}
         );
     }
 
@@ -39,21 +41,22 @@ class AddNote extends Component {
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-              "name": this.state.name,
+              "title": this.state.title,
               "id": this.state.id,
-              "folderId": this.state.folderId,
-              "modified": new Date().toISOString(),
+              "folder_id": this.state.folder_id,
+              "date_modified": new Date().toISOString(),
               "content": this.state.content
             })
         };
-        fetch("http://localhost:9090/notes/", requestOptions)
+        console.log(config.API_ENDPOINT + "/api/notes", requestOptions)
+        fetch(config.API_ENDPOINT + "/api/notes", requestOptions)
           .then(response => response.json())
           .then(result => {
               this.context.addNote(
-                  result.name, 
+                  result.title, 
                   result.id, 
-                  result.folderId, 
-                  result.modified,
+                  result.folder_id, 
+                  result.date_modified,
                   result.content
                 );
               this.props.history.push("/");
@@ -62,13 +65,17 @@ class AddNote extends Component {
     }
 
     validateName() {
-        return this.context.validateName(this.state.name)
+        return this.context.validateName(this.state.title)
     }
 
+    //Automatically set the folder to the first listed
     componentDidMount() {
-        if (this.context.folders) {
+        let foldersContext = this.context.folders
+        if (foldersContext) {
             this.setState ({
-                folderId: this.context.folders[0].id
+                //folderId: this.context.folders[0].id
+                //folder_id: foldersContext[0].id
+                folder_id: this.context.folders[0].id
             });
         }
     }
@@ -106,9 +113,9 @@ class AddNote extends Component {
                             Note Name:{' '}
                             <input 
                                 type="text" 
-                                value={this.state.name}
+                                value={this.state.title}
                                 className="NameInput" 
-                                name="name" 
+                                title="name" 
                                 id="name"
                                 aria-required="true" 
                                 aria-labelledby="enterNoteName"
@@ -121,7 +128,7 @@ class AddNote extends Component {
                             Content:{' '}
                             <textarea
                                 className="ContentInput" 
-                                name="content" 
+                                title="content" 
                                 id="content"  
                                 aria-required="false" 
                                 aria-labelledby="enterContent"
@@ -132,16 +139,16 @@ class AddNote extends Component {
                         <label htmlFor="selectFolder" className="AddNote_Label">
                             Folder:{' '}
                             <select className="SelectFolder"
-                                value={this.state.folderId} onChange={(e) => this.handleChangeOfFolder(e)}>
+                                value={this.state.folder_id} onChange={(e) => this.handleChangeOfFolder(e)}>
                                 {notesContext.folders.map(folder => {
                                     return(
                                         <option 
                                             //aria-required="false" 
                                             aria-labelledby="selectFolder"
                                             value={folder.id} 
-                                            name={folder.name} 
+                                            name={folder.title} 
                                             key={folder.id}>
-                                            {folder.name}
+                                            {folder.title}
                                         </option>
                                     )
                                 })}

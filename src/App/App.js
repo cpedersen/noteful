@@ -9,17 +9,8 @@ import NotesContext from '../notesContext'
 import config from '../config'
 import AddFolder from '../AddFolder/addFolder'
 import AddNote from '../AddNote/addNote'
-/*import AddFolder from './addFolder'
-import AddNote from './addNote'*/
 import ErrorBoundary from '../errorBoundary'
 import './App.css'
-/*require('dotenv').config()*/
-
-/*const foldersRouter = require('./folders/folders-router')
-const notesRouter = require('./notes/notes-router')*/
-/*const uuidv4 = require("uuid/v4")*/
-/*const express = require('express')
-const app = express()*/
 
 class App extends Component {
   state = {
@@ -29,6 +20,7 @@ class App extends Component {
   };
 
   setData = (notes, folders) => {
+    console.log(notes, folders)
     this.setState({
       notes,
       folders,
@@ -36,13 +28,16 @@ class App extends Component {
     })
   }
 
+  //YOUAREHERE - this is failing with "Unexpected end of JSON input"
   deleteNote = note_id => {
-    fetch(config.API_ENDPOINT + "/notes/" + note_id, {
+    let requestOptions = {
       method: 'DELETE',
       headers: {
-        'content-type': 'application/json'
+        "Content-Type": "application/json"
       }
-    })
+    }
+    console.log("fetch: " + config.API_ENDPOINT + "/api/notes/" + note_id)
+    fetch(config.API_ENDPOINT + "/api/notes/" + note_id, requestOptions)
       .then(response => response.json())
       .then(result => {
         const newNotes = this.state.notes.filter(note => note.id !== note_id)
@@ -52,32 +47,32 @@ class App extends Component {
       })
   }
 
-  addFolder = (name, id) => {
+  addFolder = (title, id) => {
     this.setState({
-      folders: [...this.state.folders, {name, id}]
+      folders: [...this.state.folders, {title, id}]
     })
   }
 
-  addNote = (name, id, folderId, modified, content) => {
+  addNote = (title, id, folder_id, date_modified, content) => {
     this.setState({
-      notes: [...this.state.notes, {name, id, folderId, modified, content}]
+      notes: [...this.state.notes, {title, id, folder_id, date_modified, content}]
     })
   }
 
-  validateName(name) {
-    if (name.length === 0) {
+  validateName(title) {
+    if (title.length === 0) {
       return 'Name is required';
-    } else if (name.length < 3) {
+    } else if (title.length < 3) {
       return 'Name must be at least 3 characters long';
-    } else if (name.length > 49) {
+    } else if (title.length > 49) {
       return 'Name must be less than 50 characters long';
     }
   }
 
   componentDidMount() {
     Promise.all([
-      fetch(config.API_ENDPOINT + "/notes"),
-      fetch(config.API_ENDPOINT + "/folders")
+      fetch(config.API_ENDPOINT + "/api/notes"),
+      fetch(config.API_ENDPOINT + "/api/folders")
     ])
     .then(responses => {
       return Promise.all(responses.map(function (response) {
@@ -85,7 +80,11 @@ class App extends Component {
       }));
     })
     .then(results => {
-      this.setData(results[0], results[1])
+      //this.setData(results[0], results[1])
+      this.setState({
+        notes: results[0],
+        folders: results[1]
+      })
     })
     .catch(error => this.setState({ error }))
   }
@@ -111,19 +110,19 @@ class App extends Component {
                   component={Header}
                 />
                 <Route 
-                  path="/folder/:folder_id" 
+                  path="/api/folder/:folder_id" 
                   component={Header}
                 />
                 <Route
-                  path="/note/:note_id" 
+                  path="/api/note/:note_id" 
                   component={Header}
                 />
                 <Route
-                  path="/note/add-note" 
+                  path="/api/note/add-note" 
                   component={Header}
                 />
                 <Route
-                  path="/note/add-folder" 
+                  path="/api/note/add-folder" 
                   component={Header}
                 />
               </Switch>
@@ -136,11 +135,11 @@ class App extends Component {
                         component={Sidebar}
                       />
                       <Route className="Section_Sidebar_Mobile"
-                        path="/folder/:folder_id" 
+                        path="/api/folder/:folder_id" 
                         component={Sidebar}
                       />
                       <Route 
-                        path="/note/:note_id" 
+                        path="/api/note/:note_id" 
                         component={SidebarDetail}
                       />
                   </Switch>
@@ -153,19 +152,19 @@ class App extends Component {
                         component={Main}
                         />
                       <Route 
-                        path="/folder/:folder_id" 
+                        path="/api/folder/:folder_id" 
                         component={Main}
                       />
                       <Route 
-                        path="/note/:note_id" 
+                        path="/api/note/:note_id" 
                         component={MainDetail}
                       />
                       <Route 
-                        path="/add-folder" 
+                        path="/api/add-folder" 
                         component={AddFolder}
                       />
                       <Route 
-                        path="/add-note" 
+                        path="/api/add-note" 
                         component={AddNote}
                       />
                     </Switch>

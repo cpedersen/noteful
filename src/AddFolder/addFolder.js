@@ -29,7 +29,7 @@ class AddFolder extends Component {
         fetch(config.API_ENDPOINT + "/api/folders", requestOptions)
           .then(response => response.json())
           .then(result => {
-              console.log(result);
+              //console.log(result);
               this.context.addFolder(result.title, result.id);
               this.props.history.push("/");
             })

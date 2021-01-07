@@ -8,7 +8,7 @@ class MainDetail extends Component {
     static contextType = NotesContext;
     render() {
         let notesContext = this.context
-        let selectedNote = notesContext.notes.filter(note => note.id === this.props.match.params.note_id)
+        let selectedNote = notesContext.notes.filter(note => note.id == this.props.match.params.note_id)
         return (
             <section className="MainDetail">
                 <div className="MainDetail_Header">

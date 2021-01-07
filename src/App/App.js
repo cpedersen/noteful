@@ -42,7 +42,7 @@ class App extends Component {
       //.then(console.log)
       //.then(response => response.json())
       .then(result => {
-        console.log(result)
+        //console.log(result)
         const newNotes = this.state.notes.filter(note => note.id !== note_id)
         this.setState({
           notes: newNotes

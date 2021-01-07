@@ -18,12 +18,11 @@ class AddNote extends Component {
         this.handleChangeOfNote = this.handleChangeOfNote.bind(this);
         this.handleChangeOfFolder = this.handleChangeOfFolder.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        //this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     handleChangeOfNote(event) {
         this.setState(
-            {[event.target.title]: event.target.value}
+            {title: event.target.value}
         );
     }
 
@@ -48,7 +47,6 @@ class AddNote extends Component {
               "content": this.state.content
             })
         };
-        console.log(config.API_ENDPOINT + "/api/notes", requestOptions)
         fetch(config.API_ENDPOINT + "/api/notes", requestOptions)
           .then(response => response.json())
           .then(result => {
@@ -70,13 +68,11 @@ class AddNote extends Component {
 
     //Automatically set the folder to the first listed
     componentDidMount() {
-        let foldersContext = this.context.folders
+        let foldersContext = this.context.folders        
         if (foldersContext) {
             this.setState ({
-                //folderId: this.context.folders[0].id
-                //folder_id: foldersContext[0].id
-                folder_id: this.context.folders[0].id
-            });
+                folder_id: foldersContext[0].id
+            })
         }
     }
 

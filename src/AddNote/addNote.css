@@ -70,7 +70,6 @@ label select {
 }
 
 .AddNote_Section_BackButton {
-    background-color: #8B7B8B;
     color: black;
     height: 40px;
     padding: 10px 10px 0px 20px;
@@ -113,14 +112,12 @@ label select {
 
     .AddNote_Title {
         font-size: 1.5rem;
-        margin: 2rem 0 1rem 0;
-        color: white;
+        margin: 2rem 0 1rem;
     }
 
     .AddNote_HeaderBox {
         margin: 5rem 0rem 0rem 043m;
         display: block;
-        /*border: 1px solid black;*/
     }
 
     .AddNote {

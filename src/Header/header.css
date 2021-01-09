@@ -1,12 +1,8 @@
 .Header_HeaderBox {
-    background-color: #8B7B8B;
-    color: white;
     text-align: center;
 }
 
 .HeaderBox_WithNote {
-    background-color: #8B7B8B;
-    color: white;
     width: 100%;
     margin: 2rem 0 1rem 0;
     display: flex;
@@ -41,7 +37,6 @@
 }
 
 .Header_Section_BackButton {
-    background-color: #8B7B8B;
     color: black;
     height: 40px;
 }
@@ -60,11 +55,9 @@
 
 @media only screen and (max-width: 320px) {
     .Header_HeaderBox {
-
     }
 
     .Header_Main {
         margin: 0rem 0rem 0rem 0rem;
     }
-    
 }

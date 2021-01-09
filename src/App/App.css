@@ -1,14 +1,8 @@
-/* TODO */
-/* 1. Clean out colors (white and background)
-/* 2. Clean out media queries
-/* 3. Fix Add Folder screen */
-
 body {
 }
 
 .App {
     margin: 3vw;
-    background-color:  #8B7B8B;
 }
 
 .Section_All {
@@ -27,11 +21,9 @@ body {
 }
 
 .Section_Sidebar {
-    color: white;
 }
 
 .Section_Main {
-    color: white;
     font-size: 1rem;
     flex-grow: 1;
     margin-left: 1rem;

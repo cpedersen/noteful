@@ -16,7 +16,6 @@
 }
 
 .AddFolder_Section {
-    background-color: #8B7B8B;
     margin-top: 1rem;
 }
 
@@ -32,7 +31,8 @@
 }
 
 .Selected {
-    color: #8B7B8B;
+    /*color: #8B7B8B;*/
+    color: #2E0854; 
     text-decoration: underline;
     font-weight: bold;
 }

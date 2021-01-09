@@ -4,6 +4,8 @@ import { format, parseISO } from 'date-fns'
 import NotesContext from '../notesContext'
 import './main.css';
 import '../notes-helpers.js'
+import Sidebar from '../Sidebar/sidebar.js'
+import SidebarDetail from '../SidebarDetail/sidebarDetail.js'
 
 class Main extends Component {
     static contextType = NotesContext
@@ -17,6 +19,7 @@ class Main extends Component {
         }
         
         return (
+            <>
             <section className="Main">
                 {notes.map(note => {
                     return(
@@ -48,8 +51,8 @@ class Main extends Component {
                     </NavLink>
                 </section>
             </section>
-            
-        );
+           </> 
+        ); 
 
     }
 }

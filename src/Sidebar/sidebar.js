@@ -9,11 +9,11 @@ class Sidebar extends Component {
         let notesContext = this.context
         const selectedFolder = this.props.match.params.folder_id || {}
         return (
-            <section className="Sidebar">
+            <div>
                 {notesContext.folders.map(folder => {
                     console.log(folder)
                     return(
-                        <section key={folder.id} className={(selectedFolder && selectedFolder === folder.id)? "SelectedFolder": "Folder"}>
+                        <section key={folder.id} className={(selectedFolder && selectedFolder === folder.id)? "Folder SelectedFolder" : "Folder"}>
                             <NavLink className="Folder_Link" 
                                 tag='button'
                                 role='link'
@@ -34,9 +34,7 @@ class Sidebar extends Component {
                         Add Folder
                     </NavLink>
                 </section>
-            </section>
-
-
+            </div>
         );
     }
 }

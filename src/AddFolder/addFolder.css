@@ -2,7 +2,7 @@
 .AddFolder {
     /*border: 1px solid black;*/
     /*margin: 20px;*/
-    margin: 0rem 5rem 0rem 0rem;
+    /*margin: 0rem 5rem 0rem 0rem;*/
 }
 
 .NameInput {
@@ -80,11 +80,9 @@
     border: 1px solid lightgray;
     background-color: lightgray;   
     padding: 1rem;
-    margin: 0rem 0rem 0rem 2rem;
     text-align: center;
     text-decoration: inherit;
     border-radius: 50%;
-    height: 1rem;
     width: 1rem;
     font-size: 1.2rem;
 }

@@ -1,17 +1,6 @@
 .MainDetail {
-    color: white;
-    float: left;
-    width: 80%;
     margin-top: 15px;
-    /*display: flex;
-    flex-direction: column; */
-    align-content: space-around;
-    height: 500px;
-    padding: 0px;
     margin: 6px;
-    /*display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;*/
     text-align: left;
 }
 
@@ -19,31 +8,28 @@
     background-color:#696969;
     color: white;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: space-between;
-    width: 80%;
-    width: 400px;
+    position: relative;
 }
 
 .Header_Section1 {
 }
 
 .Header_Section2 {
-    height: 50px;
-    width: 65px;
+    position: absolute;
+    right: 0;
 }
 
 .NoteTitle {
     padding: 6px 0px 0px 6px;   
-    margin: 6px 6px 2px 6px;
+    margin: 6px 6px 2px;
     font-weight: bold;
     text-align: left;
 }
 
 .Date {
     padding: 0px 0px 6px 6px;
-    margin: 6px 6px 12px 6px;
+    margin: 6px 6px 12px;
     font-size: 14px;
     text-align: left;
 }
@@ -51,29 +37,23 @@
 .DeleteButton {
     background-color: lightgray;
     border: 1px solid #696969;
-    transform: rotate(-90deg);
-    width: 90px;
-    top: 150px;
-    margin: 33px 0px 0px 0px;
-    padding: 4px;
-    font-size: 17px;
-    text-decoration: inherit;
+    transform: rotate(-90deg) translateY(-30px);
+    transform-origin: top right;
+    width: 115px;
+    padding: 4px; /* select multiple parts of code: alt + click */
+    font-size: 17px; /* duplicating lines: alt+ shift + arrow up/down */
+    text-decoration: inherit; /* moving lines: alt + arrow up/down*/
 }
 
 .NoteBox {
-    width: 85%;
     color: black;
     background-color: white;
-    font-size: 1rem;
-    text-indent: 0rem;
-    margin: -0rem -4rem -4rem -4rem;
 }
 
 .NoteText {
     margin: 10px;
 }
-
-
+/*
 @media only screen and (max-width: 320px) {
     .NoteBox {
         width: 500%;
@@ -95,17 +75,7 @@
         margin: 0rem 0rem 0rem -3.9rem;
     }
 
-    .DeleteButton {
-        width: 80px;
-        top: 150px;
-        margin: 28px 0px 0px 5px;
-        padding: 4px;
-        font-size: 17px;
-        text-decoration: inherit;
-    }
-
     .Header_Section1 {
-        /*margin: -0rem -4rem -4rem -4rem;*/
-
     }
 }
+*/

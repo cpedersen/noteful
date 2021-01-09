@@ -6,9 +6,9 @@ import './header.css';
 class Header extends Component {
     static contextType = NotesContext;
     render() {
-        let notesContext = this.context
-        let selectedNote = []
-        selectedNote = notesContext.notes.filter(note => note.id === this.props.match.params.note_id)
+        let notesContext = this.context;
+        let selectedNote = notesContext.notes.filter(note => note.id === this.props.match.params.note_id)
+
         if (selectedNote.length === 0) {
             return( 
                 <div className="Header_HeaderBox">

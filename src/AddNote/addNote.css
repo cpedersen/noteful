@@ -12,6 +12,20 @@
     align-items: baseline;
 }
 
+label {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+label input,
+label textarea,
+label select {
+    width: 200px;
+    margin-left: 10px;
+}
+
 .AddNote_Label {
     font-size: 17px;
 }
@@ -53,7 +67,8 @@
 }
 
 .AddNote_Header_Main {
-    margin: 2.5rem 0rem 2.5rem 2.5rem;
+    margin: 2.5rem 0;
+    text-align: center;
 }
 
 .AddNote_Header_Link {
@@ -61,9 +76,6 @@
 }
 
 .AddNote_HeadingText {
-    color: white;
-    text-align: left;
-    margin: 2px 2px 2px 2px;
 }
 
 .NoteTitle {

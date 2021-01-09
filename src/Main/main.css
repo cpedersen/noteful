@@ -2,26 +2,14 @@
 .Main {
     background-color: #8B7B8B;
     color: white;
-    float: left;
     text-align: left;
-    width: 45vw;
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-    justify-content: center;
-    align-items: center;
 }
 
 .Note {
     background-color:#696969;
     color: white;
-    /*margin: 0rem 2rem 1rem 4rem;
-    padding: 0.5rem 1rem 3rem 0.5rem;*/
-    margin: 0rem 2rem 1rem 4rem;
-    padding: 0.5rem 1rem 3rem 0.5rem;
-    width: 30vw;
-    height: 7.5rem;
-    position: relative;
+    margin: 0 0 1rem;
+    padding: 0.5rem 1rem;
 }
 
 .Note_Section2 {
@@ -29,16 +17,17 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+    line-height: 18px;
 }
 
 .Note_Section2_Date {
     color: white;
     font-size: 12px;
     margin: 0px;
-
 }
 
 .Note_Section2_Button {
+    align-self: flex-end;
     
 }
 

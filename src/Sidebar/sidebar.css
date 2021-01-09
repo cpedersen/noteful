@@ -1,30 +1,14 @@
 /* These settings are for mobile devices greater than 320 width */
-.Sidebar {
-    background-color:  #8B7B8B;
-    color: white;
-    float: left;
-    width: 15vw;
-    display: flex;
-    flex-direction: column; 
-    align-content: space-around;
-    justify-content: center;
-    align-items: center;
-}
-
 .Folder {
     background-color: #573976;
-    margin: 0rem 1rem 1rem 3rem;
-    padding: 1rem 2.5rem 1rem 1rem;
-    width: 7rem;
+    margin: 0 0 1rem;
+    padding: 1rem 2.5rem;
     text-align: center;
-    display: block;
+    border-radius: 5px;
 }
 
 .SelectedFolder {
     background-color: #2E0854; 
-    margin: 0rem 1rem 1rem 3rem;
-    padding: 1rem 2.5rem 1rem 1rem;
-    width: 7rem;
 }
 
 .Folder_Link {
@@ -34,8 +18,7 @@
 
 .AddFolder_Section {
     background-color: #8B7B8B;
-    width: 10rem;
-    margin: 1rem 0px 0px 0px;
+    margin-top: 1rem;
 }
 
 .AddFolder_Button {
@@ -43,7 +26,6 @@
     background-color: lightgray;   
     color: #2E0854;
     padding: 5px;
-    margin: 0rem 0rem 0rem 1.5rem;
     text-align: center;
     text-decoration: inherit;
     border-radius: 20%;
@@ -60,21 +42,15 @@
 
 
 
+@media only screen and (max-width: 375px) {
+    .Folder {
+        padding: 1rem;
+    }
+}
 
 
 /* These settings are for the smallest screens */
-@media only screen and (max-width: 320px) {
-    .Sidebar {
-        width: 6vw;
-    }
-    
-    .Folder {
-        margin: 0rem 1.4rem 1rem 4.5rem;
-        padding: 1rem 1rem 1rem .5rem;
-        width: 5.2rem;
-        font-size: .9rem;
-        text-align: center;
-    }
+/*@media only screen and (max-width: 320px) {
     
     .SelectedFolder {
         margin: 0rem 1.4rem 1rem 4.5rem;
@@ -96,7 +72,7 @@
     .Folder_Link {
         padding: 0rem;
     }
-}
+}*/
 
 /* These settings are for larger screens */
 /*@media only screen and (min-width: 750px) {

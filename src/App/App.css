@@ -8,7 +8,7 @@ body {
     background-color:  #8B7B8B;
 }
 
-/* How prevent overlapping sections using display block: */
+/* How prevent overlapping sections using display block?: */
 /* 1. Use width percentages */
 /* 2. Use max-width */
 /* 3. Use display: block */
@@ -25,6 +25,8 @@ body {
 
 .Section_SidebarMain {
     display: flex;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .Section_Sidebar {
@@ -34,15 +36,16 @@ body {
 
 .Section_Main {
     color: white;
-    /*float: left;*/
-    /*margin: 0rem;*/
     font-size: 1rem;
-    /*line-height: 100%;*/
-    width: 62vw;
-    height: 100vh;
-    /*padding: 0rem 0rem 0rem 3rem;*/
-    /*margin: 0rem 0rem 0rem 4rem;*/
+    flex-grow: 1;
+    margin-left: 1rem;
 }
+
+/*@media only screen and (max-width: 360px) {
+    .Section_Main {
+        margin: 1rem 0 0;
+    }
+}*/
 
 body { 
     background-color: #8B7B8B;
@@ -54,26 +57,22 @@ body {
 }
 
 
+/*@media only screen and (max-width: 360px) {
+    .Section_SidebarMain {
+        flex-direction: column;
+    }
+}*/
+
 /* These settings are for the smallest screens */
 @media only screen and (max-width: 320px) {
-    .Section_SidebarMain {
-        width: 100vw;
-        height: 100vh;
-    }
-
     .Section_Sidebar {
         font-size: 1rem;
         line-height: 100%;
-        /*width: 22vw;*/
-        height: 100vh;
-        float: left;
     }
 
     .Section_Main {
         font-size: 1rem;
         line-height: 100%;
-        width: 30vw;
-        height: 100vh;
         padding: 0rem 0rem 0rem 3rem;
         margin: 0rem 0rem 0rem 4rem;
     }

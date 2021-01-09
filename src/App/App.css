@@ -1,20 +1,17 @@
-/* These settings are for mobile devices greater than 320 width */
+/* TODO */
+/* 1. Clean out colors (white and background)
+/* 2. Clean out media queries
+/* 3. Fix Add Folder screen */
+
 body {
 }
 
 .App {
-    /*margin: 25px 25px 25px 25px;*/
     margin: 3vw;
     background-color:  #8B7B8B;
 }
 
-/* How prevent overlapping sections using display block?: */
-/* 1. Use width percentages */
-/* 2. Use max-width */
-/* 3. Use display: block */
-
 .Section_All {
-    /*width: 100vw;*/
     margin: auto;
     max-width: 1200px;
 }
@@ -31,7 +28,6 @@ body {
 
 .Section_Sidebar {
     color: white;
-    /*margin: 0rem 1rem 1rem 1rem;*/
 }
 
 .Section_Main {
@@ -40,12 +36,6 @@ body {
     flex-grow: 1;
     margin-left: 1rem;
 }
-
-/*@media only screen and (max-width: 360px) {
-    .Section_Main {
-        margin: 1rem 0 0;
-    }
-}*/
 
 body { 
     background-color: #8B7B8B;
@@ -56,14 +46,6 @@ body {
     text-align: center;
 }
 
-
-/*@media only screen and (max-width: 360px) {
-    .Section_SidebarMain {
-        flex-direction: column;
-    }
-}*/
-
-/* These settings are for the smallest screens */
 @media only screen and (max-width: 320px) {
     .Section_Sidebar {
         font-size: 1rem;
@@ -77,21 +59,3 @@ body {
         margin: 0rem 0rem 0rem 4rem;
     }
 }
-
-/*
-
-/* These settings are for larger screens */
-/*@media only screen and (min-width: 750px) {
-    body { 
-        font-size: .8rem;
-        line-height: 80%;
-    }
-    .Section_Sidebar {
-        font-size: .8rem;
-        line-height: 80%;
-    }
-    .Section_Main {
-        font-size: .8rem;
-        line-height: 80%;
-    }
-}*/

@@ -1,4 +1,3 @@
-/* These settings are for mobile devices greater than 320 width */
 .AddNote {
     margin: 20px;
     display: flex;
@@ -42,23 +41,8 @@ label select {
     padding: 5px;
 }
 
-/*.HeaderBox {
-    background-color: #8B7B8B;
-    color: white;
-    margin: 0px 0 1.4rem 20%;
-    display: flex;
-    flex-direction: row;
-    flex: 1 1 auto;
-}*/
-
 .AddNote_HeaderBox {
-    /*border: 1px solid black;*/
-    background-color: #8B7B8B;
-    color: white;
-    /*width: 100%;*/
     margin: 2rem 0 4rem 0rems;
-    /*display: flex;
-    flex-direction: row;*/
 }
 
 .AddNote_Header_Sidebar {
@@ -83,7 +67,6 @@ label select {
     font-size: 1.5rem;
     margin: 0 0 0.75rem 0;
     padding: 1rem;
-    color: white;
 }
 
 .AddNote_Section_BackButton {
@@ -111,9 +94,6 @@ label select {
     font-size: 2rem;
 }
 
-
-
-/* These settings are for the smallest screens */
 @media only screen and (max-width: 320px) {
     .AddNote_Label {
         font-size: 1rem;
@@ -178,27 +158,3 @@ label select {
     }
 }
 
-
-/* These settings are for larger screens */
-/*@media only screen and (min-width: 750px) {
-    body { 
-        font-size: .8rem;
-        line-height: 80%;
-    }
-    .AddNote {
-        font-size: .8rem;
-        line-height: 80%;
-    }
-    .AddNote_Label {
-        font-size: .8rem;
-        line-height: 80%;
-    }
-    .SelectFolder {
-        font-size: .8rem;
-        line-height: 80%;
-    }
-    .AddNote_SubmitButton {
-        font-size: .8rem;
-        line-height: 80%;
-    }
-}*/

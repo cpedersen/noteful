@@ -1,11 +1,6 @@
-/* These settings are for mobile devices greater than 320 width */
 .Header_HeaderBox {
-    /*border: 1px solid black;*/
     background-color: #8B7B8B;
     color: white;
-    /*display: flex;
-    flex-direction: row;
-    flex: 1 1 auto;*/
     text-align: center;
 }
 
@@ -19,13 +14,9 @@
 }
 
 .Header_Sidebar {
-    /*flex: 1 1 auto;*/
-    /*width: 18%;*/
-    /*border: 1px solid black;*/
 }
 
 .Header_Sidebar_WithNote {
-    /*flex: 1 1 auto;*/
     width: 18%;
     padding: 0px 0px;
 }
@@ -36,7 +27,6 @@
 }
 
 .Header_Main_WithNote {
-    /*flex: 1 1 auto;*/
     margin: 0px 20px;
 }
 
@@ -68,9 +58,6 @@
     font-size: 14px;
 }
 
-
-
-/* These settings are for the smallest screens */
 @media only screen and (max-width: 320px) {
     .Header_HeaderBox {
 
@@ -81,9 +68,3 @@
     }
     
 }
-
-
-/* These settings are for larger screens */
-/*@media only screen and (min-width: 750px) {
-
-} */

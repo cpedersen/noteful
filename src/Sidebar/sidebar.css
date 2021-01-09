@@ -1,4 +1,3 @@
-/* These settings are for mobile devices greater than 320 width */
 .Folder {
     background-color: #573976;
     margin: 0 0 1rem;
@@ -38,10 +37,6 @@
     font-weight: bold;
 }
 
-
-
-
-
 @media only screen and (max-width: 375px) {
     .Folder {
         padding: 1rem;
@@ -49,62 +44,3 @@
 }
 
 
-/* These settings are for the smallest screens */
-/*@media only screen and (max-width: 320px) {
-    
-    .SelectedFolder {
-        margin: 0rem 1.4rem 1rem 4.5rem;
-        padding: 1rem 1rem 1rem .5rem;
-        width: 5.2rem;
-    }
-    
-    .AddFolder_Section {
-        width: 5.7rem;
-        margin: 1rem 1rem 1rem 4rem;
-    }
-    
-    .AddFolder_Button {
-        padding: .4rem;
-        font-size: .9rem;
-        margin: 0rem;
-    }
-
-    .Folder_Link {
-        padding: 0rem;
-    }
-}*/
-
-/* These settings are for larger screens */
-/*@media only screen and (min-width: 750px) {
-    .Sidebar {
-        width: 6vw;
-    }
-    
-    .Folder {
-        margin: 0rem 1.4rem 1rem 4.5rem;
-        width: 5.2rem;
-        font-size: .9rem;
-        text-align: left;
-    }
-    
-    .SelectedFolder {
-        margin: 0rem 1.4rem 1rem 3rem;
-        padding: 0.7rem;
-        width: 5.2rem;
-    }
-    
-    .AddFolder_Section {
-        width: 5.7rem;
-        margin: 1rem 1rem 1rem 4rem;
-    }
-    
-    .AddFolder_Button {
-        padding: .4rem;
-        font-size: .9rem;
-
-    }
-
-    .Folder_Link {
-        padding: 0rem;
-    }
-}*/

@@ -53,29 +53,3 @@
 .NoteText {
     margin: 10px;
 }
-/*
-@media only screen and (max-width: 320px) {
-    .NoteBox {
-        width: 500%;
-    }
-
-    .NoteText {
-        margin: 0rem .7rem .7rem 0rem;
-        padding: .7rem;
-        font-size: .8rem;
-    }
-
-    .MainDetail {
-        margin-top: 1rem;
-        width: 12vw;
-    }
-
-    .MainDetail_Header {
-        width: 500%;
-        margin: 0rem 0rem 0rem -3.9rem;
-    }
-
-    .Header_Section1 {
-    }
-}
-*/

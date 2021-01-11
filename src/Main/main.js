@@ -4,8 +4,6 @@ import { format, parseISO } from 'date-fns'
 import NotesContext from '../notesContext'
 import './main.css';
 import '../notes-helpers.js'
-import Sidebar from '../Sidebar/sidebar.js'
-import SidebarDetail from '../SidebarDetail/sidebarDetail.js'
 
 class Main extends Component {
     static contextType = NotesContext
@@ -13,7 +11,7 @@ class Main extends Component {
         let notesContext = this.context
         let notes
         if (this.props.match.params.folder_id) {
-            notes = notesContext.notes.filter(note => note.folder_id == this.props.match.params.folder_id )
+            notes = notesContext.notes.filter(note => note.folder_id === Number(this.props.match.params.folder_id))
         } else {
             notes = notesContext.notes
         }

@@ -40,9 +40,9 @@
     transform: rotate(-90deg) translateY(-30px);
     transform-origin: top right;
     width: 115px;
-    padding: 4px; /* select multiple parts of code: alt + click */
-    font-size: 17px; /* duplicating lines: alt+ shift + arrow up/down */
-    text-decoration: inherit; /* moving lines: alt + arrow up/down*/
+    padding: 4px; 
+    font-size: 17px; 
+    text-decoration: inherit; 
 }
 
 .NoteBox {

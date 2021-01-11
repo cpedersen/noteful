@@ -7,10 +7,11 @@ class SidebarDetail extends Component {
     static contextType = NotesContext;
     render() {
         let notesContext = this.context.notes
-        let note = notesContext.filter(note => note.id == this.props.match.params.note_id)
+        let note = notesContext.filter(note => note.id === Number(this.props.match.params.note_id))
         let foldersContext = this.context.folders
         return (
-            foldersContext.map(folder => {
+            <section className="Section_Sidebar">
+            {foldersContext.map(folder => {
                 if (folder.id === note[0].folder_id) {
                     return(
                         <div key={folder.id} className="SidebarDetail">
@@ -24,7 +25,8 @@ class SidebarDetail extends Component {
                         <div key={folder.id}></div>
                     )
                 }
-            })
+            })}
+            </section>
         );
     }
 }

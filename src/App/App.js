@@ -28,7 +28,6 @@ class App extends Component {
     })
   }
 
-  //Keeping debug commented out below for future reference.
   deleteNote = note_id => {
     let requestOptions = {
       method: 'DELETE',
@@ -39,10 +38,7 @@ class App extends Component {
     console.log("fetch: " + config.API_ENDPOINT + "/api/notes/" + note_id)
     fetch(config.API_ENDPOINT + "/api/notes/" + note_id, requestOptions)
       .then(response => response.text())
-      //.then(console.log)
-      //.then(response => response.json())
       .then(result => {
-        //console.log(result)
         const newNotes = this.state.notes.filter(note => note.id !== note_id)
         this.setState({
           notes: newNotes
@@ -83,7 +79,6 @@ class App extends Component {
       }));
     })
     .then(results => {
-      //this.setData(results[0], results[1])
       this.setState({
         notes: results[0],
         folders: results[1]
@@ -131,22 +126,20 @@ class App extends Component {
               </Switch>
             </section>
             <section className="Section_SidebarMain">
-              <section className="Section_Sidebar">
-                  <Switch>
-                      <Route 
-                        exact path="/" 
-                        component={Sidebar}
-                      />
-                      <Route className="Section_Sidebar_Mobile"
-                        path="/api/folder/:folder_id" 
-                        component={Sidebar}
-                      />
-                      <Route 
-                        path="/api/note/:note_id" 
-                        component={SidebarDetail}
-                      />
-                  </Switch>
-              </section>
+              <Switch>
+                  <Route 
+                    exact path="/" 
+                    component={Sidebar}
+                  />
+                  <Route className="Section_Sidebar_Mobile"
+                    path="/api/folder/:folder_id" 
+                    component={Sidebar}
+                  />
+                  <Route 
+                    path="/api/note/:note_id" 
+                    component={SidebarDetail}
+                  />
+              </Switch>
               <section className="Section_Main">
                   <ErrorBoundary>
                     <Switch>

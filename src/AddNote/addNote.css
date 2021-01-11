@@ -21,7 +21,7 @@ label {
 label input,
 label textarea,
 label select {
-    width: 200px;
+    width: 160px;
     margin-left: 10px;
 }
 
@@ -42,7 +42,6 @@ label select {
 }
 
 .AddNote_HeaderBox {
-    margin: 2rem 0 4rem 0rems;
 }
 
 .AddNote_Header_Sidebar {

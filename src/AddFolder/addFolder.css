@@ -1,8 +1,9 @@
 .AddFolder {
-    margin: auto 20% auto 20%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 325px;
 }
 
 .NameInput {

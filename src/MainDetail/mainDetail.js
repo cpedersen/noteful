@@ -8,20 +8,20 @@ class MainDetail extends Component {
     static contextType = NotesContext;
     render() {
         let notesContext = this.context
-        let selectedNote = notesContext.notes.filter(note => note.id == this.props.match.params.note_id)
+        let selectedNote = notesContext.notes.find(note => note.id === Number(this.props.match.params.note_id)) || {};
         return (
             <section className="MainDetail">
                 <div className="MainDetail_Header">
                     <div className="Header_Section1">
-                        <div className="NoteTitle">{selectedNote[0].title}</div>
+                        <div className="NoteTitle">{selectedNote.title}</div>
                         <div className="Date">
-                            Modified {' '} {format(parseISO(selectedNote[0].date_modified), 'MM/dd/yyyy')} 
+                            Modified {' '} {selectedNote.date_modified && format(parseISO(selectedNote.date_modified), 'MM/dd/yyyy')} 
                         </div>
                     </div>
                     <div className="Header_Section2">
                         <button className="DeleteButton"
                             onClick={() => {
-                                    notesContext.deleteNote(selectedNote[0].id);
+                                    notesContext.deleteNote(selectedNote.id);
                                     this.props.history.push('/');
                                 }
                             }
@@ -34,7 +34,7 @@ class MainDetail extends Component {
                 </div>
                 <div className="NoteBox">
                     <p className="NoteText">
-                    {selectedNote[0].content}
+                    {selectedNote.content}
                     </p>
                 </div>
             </section>

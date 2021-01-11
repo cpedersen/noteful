@@ -10,7 +10,6 @@ class AddNote extends Component {
         super(props);
         this.state = {
             title: '',
-            id: '',
             folder_id: '',
             content: "",
             value: '',
@@ -21,8 +20,9 @@ class AddNote extends Component {
     }
 
     handleChangeOfNote(event) {
+        const { target } = event;
         this.setState(
-            {title: event.target.value}
+            {[target.name]: target.value}
         );
     }
 
@@ -41,7 +41,6 @@ class AddNote extends Component {
           },
           body: JSON.stringify({
               "title": this.state.title,
-              "id": this.state.id,
               "folder_id": this.state.folder_id,
               "date_modified": new Date().toISOString(),
               "content": this.state.content
@@ -68,8 +67,8 @@ class AddNote extends Component {
 
     //Automatically set the folder to the first listed
     componentDidMount() {
-        let foldersContext = this.context.folders        
-        if (foldersContext) {
+        let foldersContext = this.context.folders  
+        if (foldersContext && foldersContext.length) {
             this.setState ({
                 folder_id: foldersContext[0].id
             })
@@ -111,7 +110,7 @@ class AddNote extends Component {
                                 type="text" 
                                 value={this.state.title}
                                 className="NameInput" 
-                                title="name" 
+                                name="title" 
                                 id="name"
                                 aria-required="true" 
                                 aria-labelledby="enterNoteName"
@@ -124,7 +123,7 @@ class AddNote extends Component {
                             Content:{' '}
                             <textarea
                                 className="ContentInput" 
-                                title="content" 
+                                name="content" 
                                 id="content"  
                                 aria-required="false" 
                                 aria-labelledby="enterContent"

@@ -31,6 +31,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "CI=true react-scripts test --colors",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -39,7 +40,8 @@
     "migrate": "postgrator --config postgrator-config.js",
     "migrate:test": "env NODE_ENV=test npm run migrate",
     "migrate:production": "heroku run npm run migrate",
-    "deploy": "git push heroku main",
+    "predeploy": "npm run build",
+    "deploy": "vercel --prod",
     "postdeploy": "npm run migrate:production"
   },
   "eslintConfig": {

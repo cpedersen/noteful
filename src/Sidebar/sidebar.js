@@ -9,12 +9,12 @@ class Sidebar extends Component {
         let notesContext = this.context
         const {notes} = notesContext
         const selectedFolder = parseInt(this.props.match.params.folder_id) || {}
-        console.log({selectedFolder, notes: notesContext.notes})
+        //console.log({selectedFolder, notes: notesContext.notes})
         return (
             <section className="Section_Sidebar">
                 <div>
                     {notesContext.folders.map(folder => {
-                        console.log(folder)
+                        //console.log(folder)
                         const folderNotes = notes.filter(({ folder_id }) => folder_id === folder.id)
                         return(
                             <section key={folder.id} className={(selectedFolder && selectedFolder === folder.id)? "Folder SelectedFolder" : "Folder"}>

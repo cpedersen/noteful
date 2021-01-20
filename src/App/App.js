@@ -20,7 +20,7 @@ class App extends Component {
   };
 
   setData = (notes, folders) => {
-    console.log(notes, folders)
+    //console.log(notes, folders)
     this.setState({
       notes,
       folders,
@@ -35,7 +35,7 @@ class App extends Component {
         "Content-Type": "application/json"
       }
     }
-    console.log("fetch: " + config.API_ENDPOINT + "/api/notes/" + note_id)
+    //console.log("fetch: " + config.API_ENDPOINT + "/api/notes/" + note_id)
     fetch(config.API_ENDPOINT + "/api/notes/" + note_id, requestOptions)
       .then(response => response.text())
       .then(result => {

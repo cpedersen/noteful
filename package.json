@@ -36,13 +36,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve": "serve -s build",
-    "preserve": "npm run build",
-    "migrate": "postgrator --config postgrator-config.js",
-    "migrate:test": "env NODE_ENV=test npm run migrate",
-    "migrate:production": "heroku run npm run migrate",
-    "predeploy": "npm run build",
-    "deploy": "vercel --prod",
-    "postdeploy": "npm run migrate:production"
+    "deploy": "vercel --prod"
   },
   "eslintConfig": {
     "extends": "react-app"

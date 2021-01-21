@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import NotesContext from './notesContext'
 import './sidebar.css'
+import PropTypes from 'prop-types'
 
 class Sidebar extends Component {
     static contextType = NotesContext
@@ -39,6 +40,10 @@ class Sidebar extends Component {
 
         );
     }
+}
+
+Sidebar.propTypes = {
+	folder_id: PropTypes.number
 }
 
 export default Sidebar;

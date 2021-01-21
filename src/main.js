@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { Link, NavLink, withRouter } from 'react-router-dom'
 import { format, parseISO } from 'date-fns'
 import NotesContext from './notesContext'
-import './main.css';
+import './main.css'
 import './notes-helpers.js'
+import PropTypes from 'prop-types'
 
 class Main extends Component {
     static contextType = NotesContext
@@ -51,6 +52,10 @@ class Main extends Component {
         );
 
     }
+}
+
+Main.propTypes = {
+	folder_id: PropTypes.number
 }
 
 export default withRouter(Main);

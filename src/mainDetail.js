@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { format, parseISO } from 'date-fns'
 import NotesContext from './notesContext'
 import { withRouter } from 'react-router-dom'
-import './mainDetail.css';
+import './mainDetail.css'
+import PropTypes from 'prop-types'
 
 class MainDetail extends Component {
     static contextType = NotesContext;
@@ -40,6 +41,10 @@ class MainDetail extends Component {
             </section>
         );
     }
+}
+
+MainDetail.propTypes = {
+	note_id: PropTypes.number
 }
 
 export default withRouter(MainDetail);

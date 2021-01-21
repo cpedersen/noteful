@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import NotesContext from './notesContext'
-import { Link, NavLink } from 'react-router-dom';
-import './header.css';
+import { Link, NavLink } from 'react-router-dom'
+import './header.css'
+import PropTypes from 'prop-types'
 
 class Header extends Component {
     static contextType = NotesContext;
@@ -44,6 +45,10 @@ class Header extends Component {
             );
         }
     }
+}
+
+Header.propTypes = {
+	note_id: PropTypes.number
 }
 
 export default Header;

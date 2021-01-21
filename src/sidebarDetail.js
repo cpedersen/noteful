@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
 import NotesContext from './notesContext'
-import './sidebarDetail.css';
+import './sidebarDetail.css'
+import PropTypes from 'prop-types'
 
 class SidebarDetail extends Component {
     static contextType = NotesContext;
@@ -26,6 +27,10 @@ class SidebarDetail extends Component {
             })
         );
     }
+}
+
+SidebarDetail.propTypes = {
+	note_id: PropTypes.number
 }
 
 export default withRouter(SidebarDetail);
